@@ -1,194 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admissions Office & Contact | Star Institute</title>
-    <!-- Linked to our master shared stylesheet -->
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Admissions 2026 | STARX INSTITUTE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#002147",
+                    "deep-navy": "#002147",
+                    "ochre-gold": "#D4AF37",
+                    "pure-white": "#FFFFFF",
+                    "surface-gray": "#F8F9FA",
+                    "background": "#faf9fd",
+                    "on-surface": "#1a1b1e",
+                    "outline-variant": "#c4c6cf",
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-shadow {
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
 
-    <!-- TOP INFORMATIONAL STRIP -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <span>📍 Central Admissions Helpline: +91 98765 00001</span>
-            <span>✉️ info@starinstitute.edu.in</span>
+<!-- Utility Bar -->
+<div class="bg-deep-navy py-2 hidden md:block">
+    <div class="max-w-[1200px] mx-auto px-6 flex justify-end items-center gap-6 text-pure-white text-[11px] font-label-caps tracking-widest uppercase">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[14px]">phone</span>
+            <span>Helpline: +91 98765 00001</span>
+        </div>
+        <div class="flex items-center gap-2 border-l border-white/20 pl-6">
+            <span class="material-symbols-outlined text-[14px]">mail</span>
+            <span>admissions@starxinstitute.edu.in</span>
         </div>
     </div>
+</div>
 
-    <!-- MAIN SYSTEM NAVIGATION -->
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">STAR<span>INSTITUTE</span></a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="batches.html">Courses & Batches</a>
-                <a href="branches.html">Our Branches</a>
-                <a href="contact.html" class="active">Admissions 2026</a>
-            </nav>
-            <a href="contact.html" class="cta-btn-nav">Apply Now</a>
+<!-- Header -->
+<nav class="sticky top-0 z-50 bg-pure-white border-b border-outline-variant shadow-sm h-20 flex items-center">
+    <div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto">
+        <div class="text-headline-md font-headline-md font-bold text-deep-navy uppercase tracking-tight">
+            Starx<span class="text-ochre-gold">Institute</span>
         </div>
-    </header>
-
-    <!-- INNER PAGE HEADER HERO -->
-    <section class="inner-hero-section">
-        <div class="inner-hero-container">
-            <h1>Admissions & Counseling Desk</h1>
-            <p>Connect with our central processing registry or route an inquiry directly to any of our 5 localized campus hubs.</p>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="index.html">Home</a>
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="batches.html">Courses</a>
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="branches.html">Branches</a>
+            <a class="text-xs font-bold text-deep-navy border-b-2 border-ochre-gold pb-1 uppercase tracking-widest" href="contact.html">Admissions</a>
         </div>
-    </section>
+        <button class="bg-deep-navy text-pure-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all md:hidden sm:block" id="mobile-menu-btn">
+            Menu
+        </button>
+    </div>
+</nav>
 
-    <!-- CONTACT GRID & FORM ENTRY ENGINE -->
-    <section class="contact-main-section">
-        <div class="container contact-grid-layout">
-            
-            <!-- LEFT COLUMN: INSTANT ASSISTANCE DETAILS -->
-            <div class="contact-info-panel">
-                <div class="info-group-box">
-                    <h2>Central Communications Hub</h2>
-                    <p>For cross-checking registration logs, processing official corporate tie-ups, or escalations regarding student processing parameters, contact our main hub:</p>
-                    
-                    <div class="contact-metric-list">
-                        <div class="metric-list-item">
-                            <strong>📞 Central Helpline:</strong> <span>1800-XXX-STAR (Toll-Free)</span>
-                        </div>
-                        <div class="metric-list-item">
-                            <strong>📱 Direct WhatsApp Support:</strong> <span>+91 98765 00001</span>
-                        </div>
-                        <div class="metric-list-item">
-                            <strong>✉️ Academic Desk Email:</strong> <span>admissions@starinstitute.edu.in</span>
-                        </div>
+<!-- Mobile Overlay (Simple) -->
+<div class="fixed inset-0 z-[60] bg-deep-navy/95 transition-transform translate-x-full duration-300" id="mobile-overlay">
+    <div class="p-8 flex flex-col h-full text-pure-white">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-xl font-bold text-ochre-gold uppercase">Starx Institute</span>
+            <button id="close-menu-btn" class="p-2"><span class="material-symbols-outlined text-3xl">close</span></button>
+        </div>
+        <nav class="flex flex-col gap-10">
+            <a class="text-2xl font-bold opacity-70" href="index.html">HOME</a>
+            <a class="text-2xl font-bold opacity-70" href="batches.html">COURSES</a>
+            <a class="text-2xl font-bold opacity-70" href="branches.html">BRANCHES</a>
+            <a class="text-2xl font-bold text-ochre-gold" href="contact.html">ADMISSIONS</a>
+        </nav>
+    </div>
+</div>
+
+<!-- Page Title -->
+<header class="bg-deep-navy py-16 text-center">
+    <span class="text-ochre-gold text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Secure Your Future</span>
+    <h1 class="text-3xl md:text-5xl font-bold text-pure-white mb-4">Admissions Request 2026</h1>
+    <p class="text-pure-white/60 max-w-xl mx-auto px-6">Submit your details for a personalized counselling session and career roadmap with our academic experts.</p>
+</header>
+
+<main class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="bg-pure-white rounded-2xl form-shadow overflow-hidden grid lg:grid-cols-2">
+        <!-- Form Section -->
+        <div class="p-8 md:p-12">
+            <h2 class="text-2xl font-bold text-deep-navy mb-8">Personal Information</h2>
+            <form class="space-y-6" id="admission-form">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Candidate Name</label>
+                        <input id="applicantName" type="text" placeholder="John Doe" class="w-full bg-surface-gray border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-ochre-gold" required/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Mobile Number</label>
+                        <input id="applicantPhone" type="tel" placeholder="10 Digit Mobile Number" class="w-full bg-surface-gray border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-ochre-gold" required/>
                     </div>
                 </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Academic Interest</label>
+                    <select id="targetProgram" class="w-full bg-surface-gray border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-ochre-gold">
+                        <option value="Play School">Play School (Ages 2-5)</option>
+                        <option value="Schooling">Schooling (Classes 1-12)</option>
+                        <option value="Govt Job Prep">Govt Job Prep (SSC/Bank/UPSC)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2 tracking-wider">Preferred Branch</label>
+                    <select id="preferredBranch" class="w-full bg-surface-gray border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-ochre-gold">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-ochre-gold text-deep-navy font-bold py-4 rounded-lg hover:brightness-105 transition-all shadow-lg uppercase tracking-widest text-sm">
+                    Submit Admission Inquiry
+                </button>
+            </form>
+        </div>
 
-                <div class="info-group-box office-hours-box">
-                    <h3>Standard Operating Hours</h3>
-                    <p>Our campus gates and physical document verification counters operate under the following strict timing matrix:</p>
-                    <ul>
-                        <li><strong>📅 Monday to Saturday:</strong> 09:00 AM – 06:00 PM</li>
-                        <li><strong>📅 Sunday:</strong> Closed (Except Special Mock Test Schedules)</li>
+        <!-- Info Sidebar -->
+        <div class="bg-slate-50 p-8 md:p-12 border-l border-outline-variant flex flex-col justify-between">
+            <div class="space-y-10">
+                <div>
+                    <h3 class="text-xl font-bold text-deep-navy mb-4 uppercase tracking-wider">Why Enroll Now?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-ochre-gold">verified</span>
+                            <p class="text-sm text-slate-600 font-medium">Early bird scholarships available for session 2026-27.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-ochre-gold">person_add</span>
+                            <p class="text-sm text-slate-600 font-medium">Limited intake per batch to ensure personalized mentoring.</p>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="info-group-box compliance-notice-box">
-                    <h4>🔒 Institutional Data Security</h4>
-                    <p>All data transmitted through this demo admissions engine simulates complete enterprise encryption standards. Your personal records are securely managed and routed only to verified campus heads.</p>
+                <div class="p-6 bg-deep-navy rounded-xl text-pure-white">
+                    <h4 class="font-bold text-ochre-gold mb-2 uppercase text-xs tracking-widest">Office Support</h4>
+                    <p class="text-sm opacity-70 mb-4">Monday to Saturday: 09:00 AM - 06:00 PM</p>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined">call</span>
+                        <span class="font-bold">+91 98765 00001</span>
+                    </div>
                 </div>
             </div>
-
-            <!-- RIGHT COLUMN: HIGH-TRUST INQUIRY FORM -->
-            <div class="contact-form-panel">
-                <div class="form-wrapper-box">
-                    <h2>Seat Reservation & Course Query Form</h2>
-                    <p class="form-subtitle">Fill in your true academic criteria. An expert counselor from your selected closest branch will get in touch within 24 operational hours.</p>
-                    
-                    <form id="institutionalInquiryForm" onsubmit="executeDemoSubmit(event)">
-                        
-                        <div class="form-row-split">
-                            <div class="form-group-block">
-                                <label for="applicantName">Full Applicant Name <span class="required-star">*</span></label>
-                                <input type="text" id="applicantName" class="form-input-field" placeholder="Enter first and last name" required>
-                            </div>
-                            <div class="form-group-block">
-                                <label for="applicantPhone">Active Phone Number <span class="required-star">*</span></label>
-                                <input type="tel" id="applicantPhone" class="form-input-field" placeholder="10-digit mobile number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group-block">
-                            <label for="applicantEmail">Email Address</label>
-                            <input type="email" id="applicantEmail" class="form-input-field" placeholder="name@example.com">
-                        </div>
-
-                        <div class="form-row-split">
-                            <div class="form-group-block">
-                                <label for="targetProgram">Target Learning Stream <span class="required-star">*</span></label>
-                                <select id="targetProgram" class="form-select-field" required>
-                                    <option value="">-- Select Stream --</option>
-                                    <option value="Star Play School">Star Play School (Ages 2-5)</option>
-                                    <option value="K-12 Schooling">Schooling Foundation (Class 1st to 12th)</option>
-                                    <option value="UP Police Batch">UP Police Target Batch</option>
-                                    <option value="SSC Matrix Module">SSC Matrix Module</option>
-                                    <option value="Other Govt Exams">Other Competitive State Exams</option>
-                                </select>
-                            </div>
-                            <div class="form-group-block">
-                                <label for="preferredBranch">Preferred Branch Hub <span class="required-star">*</span></label>
-                                <select id="preferredBranch" class="form-select-field" required>
-                                    <option value="">-- Choose Branch Campus --</option>
-                                    <option value="Alpha Central Campus (Gurugram)">Alpha Central Campus (Gurugram)</option>
-                                    <option value="City Core Learning Hub (Noida)">City Core Learning Hub (Noida)</option>
-                                    <option value="North Extension Block (Lucknow)">North Extension Block (Lucknow)</option>
-                                    <option value="Elite Allied Academy (Prayagraj)">Elite Allied Academy (Prayagraj)</option>
-                                    <option value="Metro Extension Wing (Delhi NCR)">Metro Extension Wing (Delhi NCR)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group-block">
-                            <label for="applicantMessage">Specific Academic Queries / Background Details</label>
-                            <textarea id="applicantMessage" class="form-textarea-field" rows="4" placeholder="Mention your current class, percentage, or previous competitive exam attempts if any..."></textarea>
-                        </div>
-
-                        <div class="form-checkbox-block">
-                            <input type="checkbox" id="termsAgreement" required>
-                            <label for="termsAgreement">I authorize Star Institute to verify my credentials and contact me via Call/SMS regarding active seat availability.</label>
-                        </div>
-
-                        <button type="submit" class="form-submit-btn">Transmit Inquiry Profile</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SYSTEM GLOBAL FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>STAR INSTITUTE</h3>
-                <p>A trusted educational group managing multi-branch infrastructures spanning early developmental play schools to competitive professional career portals.</p>
-            </div>
-            <div class="footer-links-col">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home Dashboard</a></li>
-                    <li><a href="batches.html">Course Catalog</a></li>
-                    <li><a href="branches.html">Find a Branch</a></li>
-                    <li><a href="contact.html">Admissions Inquiry</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact-col">
-                <h4>Corporate Identity</h4>
-                <p>📍 Central Admin Hub, Delhi NCR</p>
-                <p>📞 +91 98765 00001</p>
-                <p>⏰ Mon - Sat: 09:00 AM - 06:00 PM</p>
+            <div class="mt-8 pt-8 border-t border-outline-variant text-[10px] text-slate-400 uppercase tracking-widest">
+                Trusted by 50,000+ Alumni across India
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Star Institute Group. All Rights Reserved. Setup Demo Environment.</p>
-        </div>
-    </footer>
+    </div>
+</main>
 
-    <!-- INTERACTION LOGIC CONTROL -->
-    <script>
-        function executeDemoSubmit(event) {
-            event.preventDefault();
-            
-            // Capture text elements to present simulated data logic loop
-            const clientName = document.getElementById('applicantName').value;
-            const chosenStream = document.getElementById('targetProgram').value;
-            const chosenBranch = document.getElementById('preferredBranch').value;
+<footer class="bg-deep-navy py-12 text-center text-pure-white/40 text-xs uppercase tracking-widest">
+    © 2026 Starx Institute Group. All Rights Reserved.
+</footer>
 
-            // Generate clean feedback modal simulation alert
-            alert(`Submission Logged Successfully!\n\nDear ${clientName},\nYour application profile details for the "${chosenStream}" module have been assigned a processing ticket.\n\nThis data payload has been routed to the administrative registrar at our ${chosenBranch}.\n\nA counselor will initialize phone contact within 24 working hours.`);
-            
-            // Flush inputs upon complete sequence execution
-            document.getElementById('institutionalInquiryForm').reset();
-        }
-    </script>
-    <script src="/js/main.js"></script>
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const overlay = document.getElementById('mobile-overlay');
+
+    menuBtn?.addEventListener('click', () => {
+        overlay.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn?.addEventListener('click', () => {
+        overlay.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+    });
+</script>
 </body>
 </html>
