@@ -1,927 +1,372 @@
-/* ==========================================================================
-   STAR INSTITUTE MASTER DESIGN ECOSYSTEM
-   ========================================================================== */
-
-/* --- 1. DESIGN TOKENS & SYSTEM VARIABLES --- */
-:root {
-    /* Color Palette */
-    --primary: #0A2540;          /* Authoritative Deep Navy */
-    --secondary: #1A365D;        /* Mid-Tone Professional Blue */
-    --accent: #F2A900;           /* Trust/Action Gold Accent */
-    --accent-hover: #D49400;     /* Darker tone for hover interactions */
-    --bg-light: #F8FAFC;         /* Soft light-gray background */
-    --bg-white: #FFFFFF;         /* Pure background surface */
-    --text-dark: #2D3748;        /* Off-black for primary readability */
-    --text-muted: #64748B;       /* Secondary slate gray for metadata */
-    --text-light: #F8FAFC;       /* Off-white text for dark components */
-    --border-color: #E2E8F0;     /* Soft crisp line separation */
-    
-    /* Layout Properties */
-    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    --max-width: 1200px;
-    --radius: 8px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.02);
-}
-
-/* --- 2. BASE RESET DECLARES --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
-body {
-    font-family: var(--font-main);
-    color: var(--text-dark);
-    background-color: var(--bg-white);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.text-center { text-align: center; }
-
-/* --- 3. UNIFIED NAVIGATION & HEADER LAYOUT --- */
-.top-bar {
-    background-color: var(--primary);
-    color: var(--text-light);
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.top-bar-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0.6rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.main-header {
-    background-color: var(--bg-white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--primary);
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-.logo span {
-    color: var(--accent);
-}
-
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--secondary);
-    font-size: 0.95rem;
-    transition: var(--transition);
-    position: relative;
-    padding: 0.5rem 0;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: var(--accent);
-    transition: var(--transition);
-    border-radius: 2px;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-/* Navigation Buttons */
-.cta-btn-nav {
-    background-color: var(--primary);
-    color: var(--text-light);
-    padding: 0.7rem 1.4rem;
-    border-radius: var(--radius);
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.cta-btn-nav:hover {
-    background-color: var(--accent);
-    color: var(--primary);
-    transform: translateY(-1px);
-}
-
-/* --- 4. LANDING/HERO SUB-SYSTEMS --- */
-.hero-section {
-    position: relative;
-    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-    padding: 9rem 0;
-    color: var(--text-light);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(10, 37, 64, 0.95) 0%, rgba(26, 54, 93, 0.85) 100%);
-    z-index: 1;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 1.5rem;
-}
-
-.hero-tagline {
-    color: var(--accent);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-
-.hero-container h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-}
-
-.hero-container p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-cta-group {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-/* Reusable System Action Buttons */
-.btn-primary, .btn-secondary, .btn-accent {
-    padding: 0.9rem 2rem;
-    font-weight: 700;
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition: var(--transition);
-    display: inline-block;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--primary);
-}
-
-.btn-primary:hover {
-    background-color: var(--bg-white);
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-light);
-    border: 2px solid rgba(255,255,255,0.4);
-}
-
-.btn-secondary:hover {
-    border-color: var(--text-light);
-    background-color: rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-}
-
-.btn-accent {
-    background-color: var(--primary);
-    color: var(--text-light);
-}
-
-.btn-accent:hover {
-    background-color: var(--accent);
-    color: var(--primary);
-    transform: translateY(-2px);
-}
-
-/* --- 5. TRUST PERFORMANCE METRICS BANNER --- */
-.metrics-section {
-    background-color: var(--bg-white);
-    padding: 2.5rem 0;
-    margin-top: -40px;
-    position: relative;
-    z-index: 10;
-}
-
-.metrics-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.metric-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-md);
-    padding: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    border-top: 4px solid var(--primary);
-}
-
-.metric-number {
-    font-size: 2.6rem;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.metric-label {
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* --- 6. CORE DISPLAY HEADINGS --- */
-.section-heading {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-heading h2 {
-    font-size: 2.4rem;
-    color: var(--primary);
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-
-.section-heading p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* --- 7. HOME INDEX DEPT VERTICAL CARD STYLING --- */
-.departments-section {
-    background-color: var(--bg-light);
-    padding: 6rem 0;
-}
-
-.dept-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-}
-
-.dept-card {
-    background-color: var(--bg-white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    transition: var(--transition);
-}
-
-.dept-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.dept-img-placeholder {
-    height: 230px;
-    background-size: cover;
-    background-position: center;
-    background-color: #CBD5E1;
-}
-
-.dept-content {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.dept-tag {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--secondary);
-    background-color: rgba(26, 54, 93, 0.08);
-    padding: 0.25rem 0.7rem;
-    border-radius: 50px;
-    align-self: flex-start;
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-}
-
-.dept-content h3 {
-    font-size: 1.4rem;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-}
-
-.dept-content p {
-    color: var(--text-dark);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.dept-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: var(--transition);
-}
-
-.dept-link:hover {
-    color: var(--accent);
-    padding-left: 5px;
-}
-
-/* --- 8. TRUST MATRIX PROPOSITION SECTION --- */
-.trust-section {
-    padding: 6rem 0;
-    background-color: var(--bg-white);
-}
-
-.trust-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.trust-text h2 {
-    font-size: 2.4rem;
-    color: var(--primary);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-}
-
-.trust-text > p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-}
-
-.trust-points {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.point-item {
-    background-color: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    border-left: 4px solid var(--accent);
-    font-size: 0.95rem;
-}
-
-.point-item strong {
-    display: block;
-    color: var(--primary);
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.trust-visual-box {
-    height: 450px;
-    background-size: cover;
-    background-position: center;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-}
-
-/* --- 9. BATCH / COURSE INFRASTRUCTURE (TAB INTERFACE) --- */
-.inner-hero-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: var(--text-light);
-    padding: 5rem 0;
-    text-align: center;
-}
-
-.inner-hero-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.inner-hero-container h1 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.inner-hero-container p {
-    font-size: 1.1rem;
-    opacity: 0.85;
-}
-
-.batches-container-section {
-    padding: 5rem 0;
-    background-color: var(--bg-light);
-}
-
-/* Tab Selection Switches */
-.tab-controller {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    padding: 0.8rem 1.8rem;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 700;
-    background-color: var(--bg-white);
-    color: var(--secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.tab-btn:hover {
-    background-color: var(--bg-light);
-    border-color: var(--secondary);
-}
-
-.tab-btn.active {
-    background-color: var(--primary);
-    color: var(--text-light);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-md);
-}
-
-/* Hidden Panels Controls */
-.tab-content {
-    display: none;
-}
-
-.tab-content.active-content {
-    display: block;
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.batch-intro-box {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 3rem auto;
-}
-
-.batch-intro-box h2 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    margin-bottom: 0.75rem;
-}
-
-.batch-intro-box p {
-    color: var(--text-muted);
-}
-
-.course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
-}
-
-.course-card {
-    background-color: var(--bg-white);
-    border-radius: var(--radius);
-    padding: 2.2rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.course-header {
-    margin-bottom: 1.25rem;
-}
-
-.badge-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    background-color: rgba(242, 169, 0, 0.15);
-    color: #A37200;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-}
-
-.alert-badge {
-    background-color: #EE4B2B;
-    color: var(--text-light);
-}
-
-.course-card h3 {
-    font-size: 1.35rem;
-    color: var(--primary);
-    font-weight: 700;
-}
-
-.course-desc {
-    color: var(--text-dark);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.batch-features-list {
-    margin-bottom: 1.5rem;
-}
-
-.batch-features-list li {
-    font-size: 0.9rem;
-    color: #334155;
-    margin-bottom: 0.5rem;
-    list-style: none;
-    font-weight: 500;
-}
-
-.course-meta {
-    background-color: var(--bg-light);
-    padding: 1rem;
-    border-radius: var(--radius);
-    font-size: 0.85rem;
-    color: var(--secondary);
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-/* Featured Course Style Upgrades */
-.featured-batch {
-    border-top: 5px solid #EE4B2B;
-    box-shadow: var(--shadow-md);
-}
-
-/* --- 10. MID-LAYOUT CALL TO ACTION BANNER --- */
-.cta-banner-section {
-    background-color: var(--secondary);
-    color: var(--text-light);
-    padding: 5rem 0;
-    text-align: center;
-}
-
-.cta-banner-section h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.cta-banner-section p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 2.5rem auto;
-    opacity: 0.9;
-}
-
-/* --- 11. ADMISSIONS CONTACT PAGE AND REGISTRY INPUT INTERFACES --- */
-.contact-main-section {
-    padding: 6rem 0;
-    background-color: var(--bg-light);
-}
-
-.contact-grid-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.info-group-box {
-    background-color: var(--bg-white);
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    margin-bottom: 2rem;
-}
-
-.info-group-box h2, .info-group-box h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.info-group-box p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
-
-.contact-metric-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.metric-list-item {
-    font-size: 0.95rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.75rem;
-}
-
-.metric-list-item:last-child { border: none; }
-
-.metric-list-item strong {
-    display: block;
-    color: var(--primary);
-}
-
-.office-hours-box ul li {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-    list-style: inside square;
-    color: var(--text-dark);
-}
-
-.compliance-notice-box {
-    background-color: rgba(10, 37, 64, 0.03);
-    border-left: 4px solid var(--primary);
-}
-
-/* Core Verification Input Container Controls */
-.form-wrapper-box {
-    background-color: var(--bg-white);
-    padding: 3rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
-}
-
-.form-wrapper-box h2 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.form-subtitle {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-}
-
-.form-row-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.form-group-block {
-    margin-bottom: 1.5rem;
-}
-
-.form-group-block label {
-    display: block;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    color: var(--secondary);
-}
-
-.required-star { color: #EE4B2B; }
-
-.form-input-field, .form-select-field, .form-textarea-field {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #CBD5E1;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    transition: var(--transition);
-}
-
-.form-input-field:focus, .form-select-field:focus, .form-textarea-field:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
-}
-
-.form-checkbox-block {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-}
-
-.form-checkbox-block input {
-    margin-top: 0.25rem;
-    width: 16px;
-    height: 16px;
-}
-
-.form-checkbox-block label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.form-submit-btn {
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--accent);
-    color: var(--primary);
-    border: none;
-    border-radius: var(--radius);
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-md);
-}
-
-.form-submit-btn:hover {
-    background-color: var(--primary);
-    color: var(--text-light);
-    transform: translateY(-1px);
-}
-
-/* --- 12. ENTERPRISE FOOTER STRUCTURE --- */
-.main-footer {
-    background-color: var(--primary);
-    color: var(--text-light);
-    padding: 5rem 0 2rem 0;
-}
-
-.footer-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem 3rem 1.5rem;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr;
-    gap: 4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-brand h3 {
-    font-size: 1.4rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    letter-spacing: 0.5px;
-}
-
-.footer-brand p {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    max-width: 320px;
-}
-
-.footer-links-col h4, .footer-contact-col h4 {
-    font-size: 1.1rem;
-    color: var(--bg-white);
-    margin-bottom: 1.25rem;
-    font-weight: 700;
-}
-
-.footer-links-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.footer-links-col ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    transition: var(--transition);
-}
-
-.footer-links-col ul li a:hover {
-    opacity: 1;
-    color: var(--accent);
-    padding-left: 4px;
-}
-
-.footer-contact-col p {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    margin-bottom: 0.75rem;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    font-size: 0.85rem;
-    opacity: 0.6;
-}
-
-/* --- 13. RESPONSIVE DESIGN PARAMETER BREAKPOINTS --- */
-@media (max-width: 992px) {
-    .trust-grid, .contact-grid-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .trust-visual-box {
-        height: 300px;
-        order: -1; /* Pushes vector element above details context */
-    }
-    .hero-container h1 {
-        font-size: 2.6rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links, .cta-btn-nav {
-        display: none; /* Keeps base interface footprint minimal on mobile viewport */
-    }
-    .top-bar-container {
-        justify-content: center;
-        font-size: 0.8rem;
-    }
-    .form-row-split {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .form-wrapper-box {
-        padding: 1.5rem;
-    }
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-}
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admissions 2026 | STAR INSTITUTE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6c391d",
+                    "outline-variant": "#c4c6cf",
+                    "surface-bright": "#faf9fd",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-container": "#002147",
+                    "surface-container-low": "#f4f3f7",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fed65b",
+                    "secondary": "#735c00",
+                    "on-background": "#1a1b1e",
+                    "inverse-primary": "#aec7f6",
+                    "tertiary": "#180500",
+                    "deep-navy": "#002147",
+                    "muted-blue": "#3B526F",
+                    "on-primary-fixed": "#001b3d",
+                    "surface-dim": "#dad9dd",
+                    "surface-container-high": "#e9e7eb",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#faf9fd",
+                    "surface-tint": "#465f88",
+                    "surface-variant": "#e3e2e6",
+                    "primary": "#000a1e",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f1f0f4",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "on-surface": "#1a1b1e",
+                    "on-secondary-container": "#745c00",
+                    "tertiary-container": "#3d1500",
+                    "outline": "#74777f",
+                    "on-tertiary-container": "#b97958",
+                    "surface-gray": "#F8F9FA",
+                    "on-surface-variant": "#44474e",
+                    "ochre-gold": "#D4AF37",
+                    "primary-fixed-dim": "#aec7f6",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "pure-white": "#FFFFFF",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-primary-container": "#708ab5",
+                    "surface-container": "#efedf1",
+                    "on-secondary-fixed": "#241a00",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffe088",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-highest": "#e3e2e6",
+                    "inverse-surface": "#2f3033",
+                    "surface": "#faf9fd",
+                    "tertiary-fixed": "#ffdbcb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-padding-sm": "40px",
+                    "margin-mobile": "16px",
+                    "section-padding-lg": "80px",
+                    "container-max": "1200px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-hero": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "display-hero-mobile": ["Montserrat"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-hero": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-hero-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-shadow {
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
+        }
+        .gradient-mesh {
+            background-color: #faf9fd;
+            background-image: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(0, 33, 71, 0.05) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Utility Bar -->
+<div class="bg-deep-navy py-2">
+<div class="max-w-container-max mx-auto px-gutter flex justify-end items-center gap-6 text-pure-white text-[11px] font-label-caps tracking-widest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">phone</span>
+<span>HELPLINE: +91 800 123 4567</span>
+</div>
+<div class="flex items-center gap-2 border-l border-white/20 pl-6">
+<span class="material-symbols-outlined text-[14px]">mail</span>
+<span>ADMISSIONS@STARINSTITUTE.EDU</span>
+</div>
+</div>
+</div>
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-pure-white border-b border-outline-variant shadow-sm h-20 flex items-center">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand Logo -->
+<div class="text-headline-md font-headline-md font-bold text-deep-navy">
+                STAR INSTITUTE
+            </div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="#">Home</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="#">Courses &amp; Batches</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="#">Our Branches</a>
+<a class="text-label-caps font-label-caps text-deep-navy border-b-2 border-ochre-gold pb-1" href="#">Admissions 2026</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="bg-deep-navy text-pure-white px-6 py-2.5 font-label-caps text-label-caps rounded-DEFAULT scale-95 active:scale-90 transition-transform">Apply Now</button>
+<button class="border border-deep-navy text-deep-navy px-6 py-2.5 font-label-caps text-label-caps rounded-DEFAULT hover:bg-surface-container transition-colors">Get Free Counselling</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative bg-deep-navy py-section-padding-lg overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="A wide-angle cinematic shot of a prestigious university campus at dusk, featuring grand neo-gothic architecture with glowing windows. The lighting is warm and golden, contrasting with the deep navy twilight sky. The atmosphere is quiet, elite, and full of academic promise, reflecting a premium institutional brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQXJ6_adtFQrOCHYoYv2ofMByT1lzu4UilUAuDFCIayGKyZM9oeXkFCbWymJ5nzA7lysBAKrSaRG594TMmg51jhXy5XpXkWm5l6kvgTYcNMRaCSABrMH1n5aw3oO_bWjCcmL3GkGVNT3pAtbrKJhB5yofUPyycbpWyuF6UcPUN2SXMoNch16qTSGJ4aqLQiKsiD7-auXwv3jg0Tnqu29PxexdWmeoxZizu04YzBkN6s_jjaVyuagMhCMyHSaxHHHjZjnEGEJNUqQ"/>
+</div>
+<div class="relative max-w-container-max mx-auto px-gutter text-center">
+<span class="inline-block text-ochre-gold font-label-caps text-label-caps mb-4 tracking-[0.2em]">EMPOWERING FUTURE LEADERS</span>
+<h1 class="text-pure-white font-display-hero text-display-hero mb-6">Admissions Open 2026</h1>
+<p class="text-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto opacity-90">
+                Join India's leading specialized vertical for competitive excellence. Secure your future with our world-class faculty and proven success track record.
+            </p>
+</div>
+</section>
+<!-- Main Content Area -->
+<main class="gradient-mesh py-section-padding-lg">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sidebar Info -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-pure-white p-8 rounded-lg form-shadow border-t-4 border-ochre-gold">
+<h2 class="text-deep-navy font-headline-md text-headline-md mb-6">Why Choose Star?</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container p-3 rounded-full text-deep-navy">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-md text-deep-navy">Elite Academic Faculty</h4>
+<p class="text-on-surface-variant text-body-md mt-1">Learn from industry veterans and top-tier academicians with decades of expertise.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-surface-container p-3 rounded-full text-deep-navy">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-md text-deep-navy">98% Success Ratio</h4>
+<p class="text-on-surface-variant text-body-md mt-1">Our results speak for themselves with consistent top ranks in national examinations.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-surface-container p-3 rounded-full text-deep-navy">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-md text-deep-navy">Personalized Mentorship</h4>
+<p class="text-on-surface-variant text-body-md mt-1">Small batch sizes ensuring individual attention and customized learning paths.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stat Cards Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-pure-white p-6 rounded-lg form-shadow border-t-2 border-ochre-gold">
+<div class="text-deep-navy font-headline-lg text-headline-lg">15+</div>
+<div class="text-on-surface-variant font-label-caps text-[10px] mt-1">REGIONAL BRANCHES</div>
+</div>
+<div class="bg-pure-white p-6 rounded-lg form-shadow border-t-2 border-ochre-gold">
+<div class="text-deep-navy font-headline-lg text-headline-lg">50k+</div>
+<div class="text-on-surface-variant font-label-caps text-[10px] mt-1">ALUMNI NETWORK</div>
+</div>
+</div>
+</div>
+<!-- Inquiry Form -->
+<div class="lg:col-span-7">
+<div class="bg-pure-white p-10 rounded-lg form-shadow border border-outline-variant/30">
+<div class="mb-10">
+<h2 class="text-deep-navy font-headline-lg text-headline-lg mb-2">Inquiry Form</h2>
+<p class="text-on-surface-variant text-body-md">Please provide your details below. Our academic counselors will reach out to you within 24 hours.</p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your inquiry. Our team will contact you soon.');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">STUDENT FULL NAME *</label>
+<input class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all placeholder:text-muted-blue/40" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">PARENT/GUARDIAN NAME</label>
+<input class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all placeholder:text-muted-blue/40" placeholder="Jane Doe" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">MOBILE NUMBER *</label>
+<input class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all placeholder:text-muted-blue/40" placeholder="+91 00000 00000" required="" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">EMAIL ADDRESS *</label>
+<input class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all placeholder:text-muted-blue/40" placeholder="example@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">SELECT PROGRAM *</label>
+<select class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all" required="">
+<option disabled="" selected="" value="">Choose a vertical</option>
+<option>Engineering (JEE Main/Adv)</option>
+<option>Medical (NEET)</option>
+<option>Management (CAT/GMAT)</option>
+<option>Law (CLAT)</option>
+<option>Foundation (Class 8-10)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">PREFERRED BRANCH *</label>
+<select class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all" required="">
+<option disabled="" selected="" value="">Select location</option>
+<option>Mumbai - South</option>
+<option>Delhi - North Campus</option>
+<option>Bangalore - Tech Center</option>
+<option>Hyderabad - West</option>
+<option>Pune - Central</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-[11px] text-deep-navy tracking-wider">ANY ADDITIONAL QUESTIONS?</label>
+<textarea class="w-full bg-surface-gray border border-muted-blue/20 rounded-DEFAULT px-4 py-3 focus:ring-0 focus:border-deep-navy transition-all placeholder:text-muted-blue/40" placeholder="How can we help you?" rows="4"></textarea>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-deep-navy border-muted-blue/20 rounded focus:ring-0" id="terms" required="" type="checkbox"/>
+<label class="text-on-surface-variant text-[12px]" for="terms">I agree to receive communications from Star Institute regarding Admissions 2026.</label>
+</div>
+<button class="w-full bg-ochre-gold text-deep-navy font-headline-md text-headline-md py-4 rounded-DEFAULT hover:bg-[#C19F2F] transition-colors duration-300 shadow-lg shadow-ochre-gold/10" type="submit">
+                            Submit Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Branch Map Section -->
+<section class="bg-pure-white py-section-padding-lg">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-deep-navy font-headline-lg text-headline-lg">Our Nationwide Presence</h2>
+<p class="text-on-surface-variant text-body-md mt-2">Find a Star Institute center near you for a face-to-face consultation.</p>
+</div>
+<button class="bg-surface-container text-deep-navy px-8 py-3 font-label-caps text-label-caps rounded-DEFAULT hover:bg-surface-container-high transition-colors">
+                    View All 15+ Branches
+                </button>
+</div>
+<div class="w-full h-[400px] rounded-xl overflow-hidden grayscale contrast-125 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A high-contrast architectural map perspective of a modern urban education hub. The lighting is clean and professional, using a corporate light-mode aesthetic. Minimalist map markers in gold highlight key institutional locations across a stylized metropolitan grid. The atmosphere conveys accessibility, scale, and strategic presence." data-location="New Delhi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfrsRGRZh1-OCeM6QhaPAH7nkMucSQ8VrwcqILXODwTez1DBOgQyOYlijobn9_NrMyCwcnpIxx9SVp1iWC7OpvhFLLdjIpFxHYpAPGVUsW6JmHOaT0ZKZUhea9HXkKXCjT5DCeeiPYGb1Tx8KTPXhOP_vw3pYAY8tuyxl7lzOxrdjOnOBoYQj21Jyt91Lv4-tRq6b0CdIL1LLXmbwqES5DAacrAnIDnsfdzPpkq5O5zZSi0NOZwWmLmDgn91t7fBy_DHNCQPgmwQ"/>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-deep-navy text-pure-white">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-gutter py-section-padding-sm max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="text-headline-sm font-headline-md text-ochre-gold">STAR INSTITUTE</div>
+<p class="text-surface-variant opacity-80 text-body-md max-w-xs">
+                    Nurturing excellence through structured pedagogy and world-class educational resources.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined hover:text-ochre-gold cursor-pointer transition-colors">face_nod</span>
+<span class="material-symbols-outlined hover:text-ochre-gold cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined hover:text-ochre-gold cursor-pointer transition-colors">public</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-3">
+<h5 class="text-label-caps font-label-caps text-pure-white mb-2">QUICK LINKS</h5>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-ochre-gold underline-offset-4 hover:underline transition-all duration-300" href="#">Home Dashboard</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-ochre-gold underline-offset-4 hover:underline transition-all duration-300" href="#">Course Catalog</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-ochre-gold underline-offset-4 hover:underline transition-all duration-300" href="#">Find a Branch</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-label-caps font-label-caps text-pure-white mb-2">LEGAL</h5>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-ochre-gold underline-offset-4 hover:underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-surface-variant opacity-80 hover:opacity-100 hover:text-ochre-gold underline-offset-4 hover:underline transition-all duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="text-label-caps font-label-caps text-pure-white">CORPORATE HEADQUARTERS</h5>
+<p class="text-surface-variant opacity-80 text-body-md">
+                    Star Excellence Tower, Sector 44,<br/>
+                    Institutional Area, Gurgaon - 122003<br/>
+                    India
+                </p>
+<div class="bg-white/5 p-4 rounded-lg">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-ochre-gold">support_agent</span>
+<span class="text-ochre-gold font-bold">Admission Hotline</span>
+</div>
+<span class="text-pure-white text-headline-md font-headline-md">1800-STAR-EDU</span>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-6 text-center text-[12px] text-surface-variant opacity-60">
+            © 2026 Star Institute Group. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        // Smooth scroll micro-interaction for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hover effect for interactive elements
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-2px)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>
