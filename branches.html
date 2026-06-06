@@ -1,167 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Campus Branches | Star Institute</title>
-   <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Our Branches | STARX INSTITUTE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          theme: {
+            extend: {
+              "colors": {
+                "deep-navy": "#002147",
+                "ochre-gold": "#D4AF37",
+                "pure-white": "#FFFFFF",
+                "background": "#faf9fd",
+                "outline-variant": "#c4c6cf",
+              },
+              "fontFamily": {
+                "headline-md": ["Montserrat"],
+                "body-md": ["Inter"],
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .branch-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 33, 71, 0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background text-slate-800 font-body-md antialiased overflow-x-hidden">
 
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <span>📍 Central Admissions Helpline: +91 98765 00001</span>
-            <span>✉️ info@starinstitute.edu.in</span>
+<!-- Header (Matching index.html style) -->
+<nav class="sticky top-0 z-50 bg-pure-white border-b border-outline-variant shadow-sm h-20 flex items-center">
+    <div class="flex justify-between items-center w-full px-6 max-w-[1200px] mx-auto">
+        <div class="text-headline-md font-headline-md font-bold text-deep-navy uppercase">
+            Starx<span class="text-ochre-gold">Institute</span>
         </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="index.html">Home</a>
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="batches.html">Courses</a>
+            <a class="text-xs font-bold text-deep-navy border-b-2 border-ochre-gold pb-1 uppercase tracking-widest" href="branches.html">Branches</a>
+            <a class="text-xs font-bold text-slate-600 hover:text-ochre-gold transition-colors uppercase tracking-widest" href="contact.html">Admissions</a>
+        </div>
+        <button class="bg-deep-navy text-pure-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest md:hidden" id="mobile-menu-btn">Menu</button>
     </div>
+</nav>
 
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">STAR<span>INSTITUTE</span></a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="batches.html">Courses & Batches</a>
-                <a href="branches.html" class="active">Our Branches</a>
-                <a href="contact.html">Admissions 2026</a>
-            </nav>
-            <a href="contact.html" class="cta-btn-nav">Apply Now</a>
+<!-- Mobile Overlay -->
+<div class="fixed inset-0 z-[60] bg-deep-navy/95 transition-transform translate-x-full duration-300" id="mobile-overlay">
+    <div class="p-8 flex flex-col h-full text-pure-white">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-xl font-bold text-ochre-gold uppercase">Starx Institute</span>
+            <button id="close-menu-btn" class="p-2"><span class="material-symbols-outlined text-3xl">close</span></button>
         </div>
-    </header>
+        <nav class="flex flex-col gap-10">
+            <a class="text-2xl font-bold opacity-70" href="index.html">HOME</a>
+            <a class="text-2xl font-bold opacity-70" href="batches.html">COURSES</a>
+            <a class="text-2xl font-bold text-ochre-gold" href="branches.html">BRANCHES</a>
+            <a class="text-2xl font-bold opacity-70" href="contact.html">ADMISSIONS</a>
+        </nav>
+    </div>
+</div>
 
-    <section class="inner-hero-section">
-        <div class="inner-hero-container">
-            <h1>Our 5 Campus Locations</h1>
-            <p>Every Star Institute branch functions under strict central quality control protocols, offering uniform infrastructure, smart classrooms, and expert mentors.</p>
-        </div>
-    </section>
+<header class="bg-deep-navy py-16 text-center">
+    <span class="text-ochre-gold text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Smart Campuses</span>
+    <h1 class="text-3xl md:text-5xl font-bold text-pure-white mb-6">Our Branch Network</h1>
+    <p class="text-pure-white/60 max-w-xl mx-auto px-6">Explore our prime locations across Delhi and NCR, featuring world-class infrastructure and safety-first campuses.</p>
+</header>
 
-    <section class="batches-container-section" style="background-color: var(--bg-white); padding-bottom: 2rem;">
-        <div class="container">
-            <div class="section-heading" style="margin-bottom: 3rem;">
-                <h2>Standard Branch Infrastructure</h2>
-                <p>No matter which branch you select, our quality assurance protocols ensure premium facility access.</p>
-            </div>
-            
-            <div class="metrics-container" style="margin-top: 0; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="metric-card" style="border-top-color: var(--accent);">
-                    <div class="metric-number" style="font-size: 1.8rem; margin-bottom: 1rem;">🖥️ Smart Labs</div>
-                    <div class="metric-label" style="text-transform: none; font-size: 0.9rem;">Equipped with computer nodes for online CBT competitive test simulations.</div>
-                </div>
-                <div class="metric-card" style="border-top-color: var(--accent);">
-                    <div class="metric-number" style="font-size: 1.8rem; margin-bottom: 1rem;">📚 Reading Vaults</div>
-                    <div class="metric-label" style="text-transform: none; font-size: 0.9rem;">Quiet reference libraries containing standard schooling logs and competitive test archives.</div>
-                </div>
-                <div class="metric-card" style="border-top-color: var(--accent);">
-                    <div class="metric-number" style="font-size: 1.8rem; margin-bottom: 1rem;">🛡️ Safe Facilities</div>
-                    <div class="metric-label" style="text-transform: none; font-size: 0.9rem;">24/7 CCTV system networks, security parameters, and dedicated student health cells.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="branches-container">
+        <!-- Branches will be injected from main.js -->
+        <div class="p-8 bg-slate-100 rounded-2xl animate-pulse h-64"></div>
+        <div class="p-8 bg-slate-100 rounded-2xl animate-pulse h-64"></div>
+        <div class="p-8 bg-slate-100 rounded-2xl animate-pulse h-64"></div>
+    </div>
+</main>
 
-    <section class="departments-section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Locate Your Closest Campus Hub</h2>
-                <p>Walk in during office hours for physical document validation or customized curriculum consultation meetings.</p>
-            </div>
+<footer class="bg-deep-navy py-12 text-center text-pure-white/40 text-[10px] uppercase tracking-widest border-t border-white/5">
+    © 2026 Starx Institute Group. All Rights Reserved.
+</footer>
 
-            <div class="dept-grid">
-                
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">HQ / Branch 01</span>
-                        <h3>Alpha Central Campus (Gurugram)</h3>
-                        <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> Sector 6 High-Street Hub, Near Corporate Lines, Gurugram, Haryana</p>
-                        <p style="margin-bottom: 1.5rem;"><strong>📞 Contact Desk:</strong> +91 98765 00001</p>
-                        <a href="contact.html?branch=gurugram" class="form-submit-btn" style="text-align: center; text-decoration: none;">Connect with Branch Advisor</a>
+<script src="js/main.js"></script>
+<script>
+    // Initialize mobile menu for this page
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const overlay = document.getElementById('mobile-overlay');
+
+    menuBtn?.addEventListener('click', () => {
+        overlay.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn?.addEventListener('click', () => {
+        overlay.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+    });
+
+    // Populate branches if registry exists
+    window.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('branches-container');
+        if (typeof starxBranchesRegistry !== 'undefined') {
+            container.innerHTML = '';
+            starxBranchesRegistry.forEach(branch => {
+                const card = document.createElement('div');
+                card.className = 'p-8 bg-pure-white rounded-2xl shadow-sm border border-outline-variant branch-card transition-all flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="w-12 h-12 bg-ochre-gold/10 text-ochre-gold rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-deep-navy mb-2 uppercase tracking-wide">${branch.name}</h3>
+                        <p class="text-sm text-slate-500 mb-6 font-medium">${branch.location}</p>
                     </div>
-                </div>
-
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Branch 02</span>
-                        <h3>City Core Learning Hub (Noida)</h3>
-                        <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> 42 Mahatma Gandhi Marg, Commercial Complex Sector 15, Noida, UP</p>
-                        <p style="margin-bottom: 1.5rem;"><strong>📞 Contact Desk:</strong> +91 98765 00002</p>
-                        <a href="contact.html?branch=noida" class="form-submit-btn" style="text-align: center; text-decoration: none;">Connect with Branch Advisor</a>
+                    <div class="pt-6 border-t border-slate-100 space-y-3">
+                        <div class="flex items-center gap-3 text-xs text-slate-600 font-bold uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-[16px] text-ochre-gold">phone</span>
+                            ${branch.helpline}
+                        </div>
+                        <button class="w-full mt-4 border border-deep-navy text-deep-navy py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-deep-navy hover:text-white transition-all">
+                            View on Map
+                        </button>
                     </div>
-                </div>
-
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Branch 03</span>
-                        <h3>North Extension Block (Lucknow)</h3>
-                        <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> Near Regional Secretariat Complex, Hazratganj Extension, Lucknow, UP</p>
-                        <p style="margin-bottom: 1.5rem;"><strong>📞 Contact Desk:</strong> +91 98765 00003</p>
-                        <a href="contact.html?branch=lucknow" class="form-submit-btn" style="text-align: center; text-decoration: none;">Connect with Branch Advisor</a>
-                    </div>
-                </div>
-
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Branch 04</span>
-                        <h3>Elite Allied Academy (Prayagraj)</h3>
-                        <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> Civil Lines Metro Plaza, Gate No. 2 Compound, Prayagraj, UP</p>
-                        <p style="margin-bottom: 1.5rem;"><strong>📞 Contact Desk:</strong> +91 98765 00004</p>
-                        <a href="contact.html?branch=prayagraj" class="form-submit-btn" style="text-align: center; text-decoration: none;">Connect with Branch Advisor</a>
-                    </div>
-                </div>
-
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Branch 05</span>
-                        <h3>Metro Extension Wing (Delhi NCR)</h3>
-                        <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> Block B, Star Junction Knowledge Park, Outer Ring Road, Delhi NCR</p>
-                        <p style="margin-bottom: 1.5rem;"><strong>📞 Contact Desk:</strong> +91 98765 00005</p>
-                        <a href="contact.html?branch=delhi" class="form-submit-btn" style="text-align: center; text-decoration: none;">Connect with Branch Advisor</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-banner-section">
-        <div class="container text-center">
-            <h2>Ready to Secure Your Campus Seat Allocation?</h2>
-            <p>Skip the long registration queues. You can transmit your academic profile right now through our encrypted central admissions intake window online.</p>
-            <a href="contact.html" class="btn-primary">Go to Admissions Portal</a>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>STAR INSTITUTE</h3>
-                <p>A trusted educational group managing multi-branch infrastructures spanning early developmental play schools to competitive professional career portals.</p>
-            </div>
-            <div class="footer-links-col">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home Dashboard</a></li>
-                    <li><a href="batches.html">Course Catalog</a></li>
-                    <li><a href="branches.html">Find a Branch</a></li>
-                    <li><a href="contact.html">Admissions Inquiry</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact-col">
-                <h4>Corporate Identity</h4>
-                <p>📍 Central Admin Hub, Delhi NCR</p>
-                <p>📞 +91 98765 00001</p>
-                <p>⏰ Mon - Sat: 09:00 AM - 06:00 PM</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Star Institute Group. All Rights Reserved. Setup Demo Environment.</p>
-        </div>
-    </footer>
-
-   <script src="/js/main.js"></script>
+                `;
+                container.appendChild(card);
+            });
+        }
+    });
+</script>
 </body>
 </html>
