@@ -1,0 +1,927 @@
+/* ==========================================================================
+   STAR INSTITUTE MASTER DESIGN ECOSYSTEM
+   ========================================================================== */
+
+/* --- 1. DESIGN TOKENS & SYSTEM VARIABLES --- */
+:root {
+    /* Color Palette */
+    --primary: #0A2540;          /* Authoritative Deep Navy */
+    --secondary: #1A365D;        /* Mid-Tone Professional Blue */
+    --accent: #F2A900;           /* Trust/Action Gold Accent */
+    --accent-hover: #D49400;     /* Darker tone for hover interactions */
+    --bg-light: #F8FAFC;         /* Soft light-gray background */
+    --bg-white: #FFFFFF;         /* Pure background surface */
+    --text-dark: #2D3748;        /* Off-black for primary readability */
+    --text-muted: #64748B;       /* Secondary slate gray for metadata */
+    --text-light: #F8FAFC;       /* Off-white text for dark components */
+    --border-color: #E2E8F0;     /* Soft crisp line separation */
+    
+    /* Layout Properties */
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --max-width: 1200px;
+    --radius: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.02);
+}
+
+/* --- 2. BASE RESET DECLARES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+
+/* --- 3. UNIFIED NAVIGATION & HEADER LAYOUT --- */
+.top-bar {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.top-bar-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.main-header {
+    background-color: var(--bg-white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Navigation Buttons */
+.cta-btn-nav {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.cta-btn-nav:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* --- 4. LANDING/HERO SUB-SYSTEMS --- */
+.hero-section {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    padding: 9rem 0;
+    color: var(--text-light);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.95) 0%, rgba(26, 54, 93, 0.85) 100%);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.hero-tagline {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hero-container h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Reusable System Action Buttons */
+.btn-primary, .btn-secondary, .btn-accent {
+    padding: 0.9rem 2rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-white);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid rgba(255,255,255,0.4);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-light);
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: var(--primary);
+    color: var(--text-light);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* --- 5. TRUST PERFORMANCE METRICS BANNER --- */
+.metrics-section {
+    background-color: var(--bg-white);
+    padding: 2.5rem 0;
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+}
+
+.metrics-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    border-top: 4px solid var(--primary);
+}
+
+.metric-number {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- 6. CORE DISPLAY HEADINGS --- */
+.section-heading {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-heading h2 {
+    font-size: 2.4rem;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- 7. HOME INDEX DEPT VERTICAL CARD STYLING --- */
+.departments-section {
+    background-color: var(--bg-light);
+    padding: 6rem 0;
+}
+
+.dept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.dept-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.dept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.dept-img-placeholder {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    background-color: #CBD5E1;
+}
+
+.dept-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dept-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--secondary);
+    background-color: rgba(26, 54, 93, 0.08);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.dept-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.dept-content p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.dept-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.dept-link:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+/* --- 8. TRUST MATRIX PROPOSITION SECTION --- */
+.trust-section {
+    padding: 6rem 0;
+    background-color: var(--bg-white);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.trust-text h2 {
+    font-size: 2.4rem;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.trust-text > p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.trust-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.point-item {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+    font-size: 0.95rem;
+}
+
+.point-item strong {
+    display: block;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.trust-visual-box {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- 9. BATCH / COURSE INFRASTRUCTURE (TAB INTERFACE) --- */
+.inner-hero-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--text-light);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.inner-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.inner-hero-container h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.inner-hero-container p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+.batches-container-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+/* Tab Selection Switches */
+.tab-controller {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.8rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--bg-white);
+    color: var(--secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-light);
+    border-color: var(--secondary);
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Hidden Panels Controls */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-content {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.batch-intro-box {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+}
+
+.batch-intro-box h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.batch-intro-box p {
+    color: var(--text-muted);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-header {
+    margin-bottom: 1.25rem;
+}
+
+.badge-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: rgba(242, 169, 0, 0.15);
+    color: #A37200;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.alert-badge {
+    background-color: #EE4B2B;
+    color: var(--text-light);
+}
+
+.course-card h3 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.course-desc {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.batch-features-list {
+    margin-bottom: 1.5rem;
+}
+
+.batch-features-list li {
+    font-size: 0.9rem;
+    color: #334155;
+    margin-bottom: 0.5rem;
+    list-style: none;
+    font-weight: 500;
+}
+
+.course-meta {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--secondary);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Featured Course Style Upgrades */
+.featured-batch {
+    border-top: 5px solid #EE4B2B;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- 10. MID-LAYOUT CALL TO ACTION BANNER --- */
+.cta-banner-section {
+    background-color: var(--secondary);
+    color: var(--text-light);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.cta-banner-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.cta-banner-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    opacity: 0.9;
+}
+
+/* --- 11. ADMISSIONS CONTACT PAGE AND REGISTRY INPUT INTERFACES --- */
+.contact-main-section {
+    padding: 6rem 0;
+    background-color: var(--bg-light);
+}
+
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.info-group-box {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.info-group-box h2, .info-group-box h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.info-group-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.contact-metric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.metric-list-item {
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.metric-list-item:last-child { border: none; }
+
+.metric-list-item strong {
+    display: block;
+    color: var(--primary);
+}
+
+.office-hours-box ul li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    list-style: inside square;
+    color: var(--text-dark);
+}
+
+.compliance-notice-box {
+    background-color: rgba(10, 37, 64, 0.03);
+    border-left: 4px solid var(--primary);
+}
+
+/* Core Verification Input Container Controls */
+.form-wrapper-box {
+    background-color: var(--bg-white);
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.form-wrapper-box h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group-block {
+    margin-bottom: 1.5rem;
+}
+
+.form-group-block label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.required-star { color: #EE4B2B; }
+
+.form-input-field, .form-select-field, .form-textarea-field {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #CBD5E1;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.form-input-field:focus, .form-select-field:focus, .form-textarea-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+}
+
+.form-checkbox-block {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.form-checkbox-block input {
+    margin-top: 0.25rem;
+    width: 16px;
+    height: 16px;
+}
+
+.form-checkbox-block label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.form-submit-btn:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+    transform: translateY(-1px);
+}
+
+/* --- 12. ENTERPRISE FOOTER STRUCTURE --- */
+.main-footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 5rem 0 2rem 0;
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    max-width: 320px;
+}
+
+.footer-links-col h4, .footer-contact-col h4 {
+    font-size: 1.1rem;
+    color: var(--bg-white);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.footer-links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links-col ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-links-col ul li a:hover {
+    opacity: 1;
+    color: var(--accent);
+    padding-left: 4px;
+}
+
+.footer-contact-col p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* --- 13. RESPONSIVE DESIGN PARAMETER BREAKPOINTS --- */
+@media (max-width: 992px) {
+    .trust-grid, .contact-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .trust-visual-box {
+        height: 300px;
+        order: -1; /* Pushes vector element above details context */
+    }
+    .hero-container h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .cta-btn-nav {
+        display: none; /* Keeps base interface footprint minimal on mobile viewport */
+    }
+    .top-bar-container {
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    .form-row-split {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .form-wrapper-box {
+        padding: 1.5rem;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
