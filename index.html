@@ -1,168 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Institute | Excellence in Education from Foundation to Career</title>
-    <!-- We link to a shared external CSS file so your styles aren't hardcoded on one page -->
-   <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>STARX INSTITUTE | Excellence in Education from Foundation to Career</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "on-tertiary-fixed-variant": "#6c391d",
+                        "outline-variant": "#c4c6cf",
+                        "surface-bright": "#faf9fd",
+                        "on-tertiary-fixed": "#341100",
+                        "primary-container": "#002147",
+                        "surface-container-low": "#f4f3f7",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "secondary": "#735c00",
+                        "on-background": "#1a1b1e",
+                        "inverse-primary": "#aec7f6",
+                        "tertiary": "#180500",
+                        "deep-navy": "#002147",
+                        "muted-blue": "#3B526F",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-dim": "#dad9dd",
+                        "surface-container-high": "#e9e7eb",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#faf9fd",
+                        "surface-tint": "#465f88",
+                        "surface-variant": "#e3e2e6",
+                        "primary": "#000a1e",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-surface": "#1a1b1e",
+                        "on-secondary-container": "#745c00",
+                        "tertiary-container": "#3d1500",
+                        "outline": "#74777f",
+                        "on-tertiary-container": "#b97958",
+                        "surface-gray": "#F8F9FA",
+                        "on-surface-variant": "#44474e",
+                        "ochre-gold": "#D4AF37",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "pure-white": "#FFFFFF",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-primary-container": "#708ab5",
+                        "surface-container": "#efedf1",
+                        "on-secondary-fixed": "#241a00",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffe088",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-highest": "#e3e2e6",
+                        "inverse-surface": "#2f3033",
+                        "surface": "#faf9fd",
+                        "tertiary-fixed": "#ffdbcb"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "spacing": {
+                        "section-padding-sm": "40px",
+                        "margin-mobile": "16px",
+                        "section-padding-lg": "80px",
+                        "container-max": "1200px",
+                        "gutter": "24px"
+                },
+                "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-hero": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "display-hero-mobile": ["Montserrat"],
+                        "label-caps": ["Inter"]
+                },
+                "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-hero": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["36px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-hero-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                }
+              },
+            },
+          }
+    </script>
+    <style>
+          .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          }
+          .card-elevation {
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
+          }
+          .card-elevation:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 33, 71, 0.1);
+          }
+          
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-container {
+            display: flex;
+            width: fit-content;
+            animation: marquee 30s linear infinite;
+          }
+          .marquee-container:hover {
+            animation-play-state: paused;
+          }
+          .topper-card {
+            flex: 0 0 350px;
+            margin-right: 32px;
+          }
+          .mobile-nav-overlay {
+              transition: transform 0.3s ease-in-out;
+          }
+          .mobile-nav-overlay.translate-x-full {
+              transform: translateX(100%);
+          }
+          .mobile-nav-overlay.translate-x-0 {
+              transform: translateX(0);
+          }
+    </style>
 </head>
-<body>
+<body class="bg-surface-bright text-on-background antialiased overflow-x-hidden">
 
-    <!-- TOP INFORMATIONAL ALERT BAR -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <span>📍 Central Admissions Helpline: +91 98765 00001</span>
-            <span>✉️ info@starinstitute.edu.in</span>
+<!-- Utility Bar (Visible on Desktop) -->
+<div class="bg-deep-navy py-2 hidden md:block">
+    <div class="max-w-container-max mx-auto px-gutter flex justify-between items-center text-pure-white">
+        <div class="flex gap-6 items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px]">phone</span>
+                <span class="font-label-caps text-label-caps uppercase">Central Helpline: +91 98765 00001</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px]">mail</span>
+                <span class="font-label-caps text-label-caps uppercase">info@starxinstitute.edu.in</span>
+            </div>
+        </div>
+        <div class="flex gap-4">
+            <span class="font-label-caps text-label-caps opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Student Portal</span>
+            <span class="font-label-caps text-label-caps opacity-80 hover:opacity-100 cursor-pointer transition-opacity">Branch Locator</span>
         </div>
     </div>
+</div>
 
-    <!-- MAIN SYSTEM NAVIGATION -->
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">STAR<span>INSTITUTE</span></a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="batches.html">Courses & Batches</a>
-                <a href="branches.html">Our Branches</a>
-                <a href="contact.html">Admissions 2026</a>
-            </nav>
-            <a href="contact.html" class="cta-btn-nav">Apply Now</a>
+<!-- Mobile Utility Bar -->
+<div class="bg-deep-navy text-pure-white py-2 px-margin-mobile flex md:hidden justify-between items-center text-[10px] tracking-wider uppercase font-semibold">
+    <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">phone</span>
+        <span>+91 98765 00001</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">mail</span>
+        <span>info@starxinstitute.edu.in</span>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<header class="sticky top-0 z-50 bg-pure-white/95 backdrop-blur-md border-b border-outline-variant shadow-sm h-20">
+    <nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+        <div class="flex items-center">
+            <span class="text-headline-md font-headline-md font-bold text-deep-navy tracking-tight">STARX<span class="text-ochre-gold">INSTITUTE</span></span>
         </div>
-    </header>
-
-    <!-- HERO DISPLAY HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-container">
-            <span class="hero-tagline">Empowering Generations, Realizing Dreams</span>
-            <h1>Comprehensive Education Built on Trust & Proven Results</h1>
-            <p>From nurture-focused early childhood play schools and strong K-12 academic foundations, to intensive strategic coaching for prestigious government job careers.</p>
-            <div class="hero-cta-group">
-                <a href="batches.html" class="btn-primary">Explore Batches</a>
-                <a href="contact.html" class="btn-secondary">Get Free Counselling</a>
-            </div>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-deep-navy border-b-2 border-ochre-gold pb-1 font-label-caps text-label-caps transition-colors duration-200" href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-ochre-gold font-label-caps text-label-caps transition-colors duration-200" href="batches.html">Courses & Batches</a>
+            <a class="text-on-surface-variant hover:text-ochre-gold font-label-caps text-label-caps transition-colors duration-200" href="branches.html">Our Branches</a>
+            <a class="text-on-surface-variant hover:text-ochre-gold font-label-caps text-label-caps transition-colors duration-200" href="contact.html">Admissions 2026</a>
         </div>
-    </section>
 
-    <!-- LIVE METRICS BANNER (TRUST STATS) -->
-    <section class="metrics-section">
-        <div class="metrics-container">
-            <div class="metric-card">
-                <div class="metric-number">5</div>
-                <div class="metric-label">Smart Campus Branches</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number">12k+</div>
-                <div class="metric-label">Satisfied Students</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number">94%</div>
-                <div class="metric-label">Success Rate in Govt Exams</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number">15+</div>
-                <div class="metric-label">Years of Academic Legacy</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CORE DEPARTMENTS SECTIONS -->
-    <section class="departments-section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Our Three Specialized Verticals</h2>
-                <p>We provide targeted, specialized environments for every distinct learning milestone.</p>
-            </div>
+        <div class="flex items-center gap-4">
+            <button class="hidden lg:block border border-deep-navy text-deep-navy px-6 py-2 font-label-caps text-label-caps hover:bg-deep-navy hover:text-pure-white transition-all scale-95 active:scale-90">Get Free Counselling</button>
+            <button class="bg-deep-navy text-pure-white px-6 py-2 font-label-caps text-label-caps hover:bg-muted-blue transition-all scale-95 active:scale-90 hidden sm:block">Apply Now</button>
             
-            <div class="dept-grid">
-                <!-- Vertical 1 -->
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Ages 2-5</span>
-                        <h3>Star Play School</h3>
-                        <p>A gentle, activity-driven introduction to learning. We focus on motor skills, interactive socializing, expression, and sensory growth in a safe environment.</p>
-                        <a href="batches.html#playschool" class="dept-link">View Curriculum →</a>
-                    </div>
-                </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="p-2 text-deep-navy md:hidden" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-[32px]">menu</span>
+            </button>
+        </div>
+    </nav>
+</header>
 
-                <!-- Vertical 2 -->
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Schooling</span>
-                        <h3>Classes 1st to 12th</h3>
-                        <p>Rigorous, conceptual schooling covering fundamental subjects to advanced boards preparation. We specialize in building clear basics for science, math, and commerce.</p>
-                        <a href="batches.html#schooling" class="dept-link">View Academic Streams →</a>
-                    </div>
-                </div>
+<!-- Mobile Navigation Overlay -->
+<div class="fixed inset-0 z-[60] bg-deep-navy/95 mobile-nav-overlay translate-x-full" id="mobile-overlay">
+    <div class="p-6 flex flex-col h-full">
+        <div class="flex justify-between items-center mb-10">
+            <span class="text-headline-md font-bold text-ochre-gold">STARX INSTITUTE</span>
+            <button class="text-pure-white" id="close-menu-btn">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="text-headline-md font-headline-md text-ochre-gold border-b-2 border-ochre-gold pb-1 w-fit" href="index.html">Home</a>
+            <a class="text-headline-md font-headline-md text-pure-white opacity-80" href="batches.html">Courses & Batches</a>
+            <a class="text-headline-md font-headline-md text-pure-white opacity-80" href="branches.html">Our Branches</a>
+            <a class="text-headline-md font-headline-md text-pure-white opacity-80" href="contact.html">Admissions 2026</a>
+        </nav>
+        <div class="mt-auto flex flex-col gap-4">
+            <button class="bg-ochre-gold text-deep-navy font-bold py-4 rounded-lg text-label-caps uppercase">Apply Now</button>
+            <button class="border border-pure-white/30 text-pure-white font-bold py-4 rounded-lg text-label-caps uppercase">Free Counselling</button>
+        </div>
+    </div>
+</div>
 
-                <!-- Vertical 3 -->
-                <div class="dept-card">
-                    <div class="dept-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1513258496099-48168024addd?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div class="dept-content">
-                        <span class="dept-tag">Career Target</span>
-                        <h3>Government Job Preparation</h3>
-                        <p>Specialized regular and weekend batches targeting competitive examinations like UP Police, SSC, and State jobs with mock tests and expert mentoring.</p>
-                        <a href="batches.html#govt-jobs" class="dept-link">View Active Batches →</a>
-                    </div>
+<!-- Hero Section -->
+<section class="relative bg-primary-container text-pure-white overflow-hidden py-section-padding-lg lg:min-h-[600px] flex items-center">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-ochre-gold to-transparent"></div>
+    </div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 text-center lg:text-left">
+            <span class="text-ochre-gold font-label-caps text-label-caps tracking-widest block">EMPOWERING GENERATIONS, REALIZING DREAMS</span>
+            <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero leading-tight">
+                Comprehensive Education Built on <span class="text-ochre-gold">Trust</span> & Proven Results
+            </h1>
+            <p class="font-body-lg text-body-lg text-pure-white/80 max-w-xl mx-auto lg:mx-0">
+                From nurture-focused early childhood play schools and strong K-12 academic foundations, to intensive strategic coaching for prestigious government job careers.
+            </p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                <button class="bg-ochre-gold text-deep-navy px-8 py-4 font-headline-md text-body-md font-bold rounded-lg hover:brightness-110 transition-all card-elevation">
+                    Explore Batches
+                </button>
+                <button class="border border-pure-white/30 text-pure-white px-8 py-4 font-headline-md text-body-md font-bold rounded-lg hover:bg-pure-white/10 transition-all">
+                    View Success Stories
+                </button>
+            </div>
+        </div>
+        <div class="relative hidden lg:block">
+            <div class="aspect-square w-full rounded-2xl overflow-hidden border-8 border-pure-white/10">
+                <img alt="Students collaborating" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsOUBR-I8dPoEkU9ROfYks9UzwovFCxl8JAB1D6gqeuPRFkRcw6y_-YnWcYzGoHMOKX0yLdyvx2uASozwL_LSr2yUHhxM_Woly55cwX1HNXTPoZ0uRR5hroxvNkm2hvbFY9AwFFJ6m638ofGJ7tGEW7dGMNgzr7Cix3pm571atVzVCXm5SlVqGcrQqwb4NqVlZe3xbZNywEJI2TUPQy1KLWJYr9pycfP09XtUT2aUi8K-iWemzAqh29"/>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-pure-white p-6 rounded-lg card-elevation text-deep-navy flex items-center gap-4">
+                <div class="bg-ochre-gold p-3 rounded-full text-deep-navy">
+                    <span class="material-symbols-outlined font-bold">star</span>
+                </div>
+                <div>
+                    <div class="text-headline-md font-headline-md">Rank #1</div>
+                    <div class="text-label-caps font-label-caps">Academic Excellence 2026</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CORE REASONS / TRUST PROPOSITION -->
-    <section class="trust-section">
-        <div class="container trust-grid">
-            <div class="trust-text">
-                <h2>Why Parents & Aspirants Choose Star Institute</h2>
-                <p>We do not believe in mass education templates. Every branch functions under strict central quality control protocols, ensuring premium facility delivery and individualized student monitoring.</p>
-                
-                <div class="trust-points">
-                    <div class="point-item">
-                        <strong>Experienced Mentors:</strong> Our educators are selected through a rigorous testing process, ensuring only highly qualified minds lead classrooms.
-                    </div>
-                    <div class="point-item">
-                        <strong>Strategic Locations:</strong> Five well-connected branches designed with modern infrastructure, safe campuses, and tech-enabled labs.
-                    </div>
-                    <div class="point-item">
-                        <strong>Updated Course Material:</strong> For our government job batches, the curriculum changes dynamically to match the latest exam patterns perfectly.
+<!-- Stats Section -->
+<section class="py-section-padding-sm -mt-12 relative z-20">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-gutter">
+            <div class="bg-pure-white p-6 md:p-8 rounded-lg card-elevation text-center border-t-4 border-ochre-gold transition-transform hover:-translate-y-2">
+                <div class="font-display-hero text-deep-navy mb-2 text-headline-lg">5</div>
+                <div class="font-label-caps text-[10px] md:text-label-caps text-muted-blue uppercase font-bold">Smart Campus Branches</div>
+            </div>
+            <div class="bg-pure-white p-6 md:p-8 rounded-lg card-elevation text-center border-t-4 border-ochre-gold transition-transform hover:-translate-y-2">
+                <div class="font-display-hero text-deep-navy mb-2 text-headline-lg">12k+</div>
+                <div class="font-label-caps text-[10px] md:text-label-caps text-muted-blue uppercase font-bold">Satisfied Students</div>
+            </div>
+            <div class="bg-pure-white p-6 md:p-8 rounded-lg card-elevation text-center border-t-4 border-ochre-gold transition-transform hover:-translate-y-2">
+                <div class="font-display-hero text-deep-navy mb-2 text-headline-lg">94%</div>
+                <div class="font-label-caps text-[10px] md:text-label-caps text-muted-blue uppercase font-bold">Success Rate in Exams</div>
+            </div>
+            <div class="bg-pure-white p-6 md:p-8 rounded-lg card-elevation text-center border-t-4 border-ochre-gold transition-transform hover:-translate-y-2">
+                <div class="font-display-hero text-deep-navy mb-2 text-headline-lg">15+</div>
+                <div class="font-label-caps text-[10px] md:text-label-caps text-muted-blue uppercase font-bold">Years of Legacy</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Verticals Section -->
+<section class="py-section-padding-lg bg-surface-gray">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Our Three Specialized Verticals</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">We provide targeted, specialized environments for every distinct learning milestone, from early childhood to professional careers.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Vertical 1 -->
+            <div class="bg-pure-white rounded-lg overflow-hidden card-elevation group">
+                <div class="relative h-64 overflow-hidden">
+                    <img alt="Play School" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPQAdguLtSVmcpQMv4onMe5sXdW-P69L3J81de2VuOlX15Es3moxZ0_9wToQnyVhLvYRLT8VQvBA87YMjNcjPlMERSyBKyvnFP0NU1hHOHTzU5cQ9nReWl4oLCyA-qNECe3yERMu8_hE6JaxlIW6ZQbPUQ5Se5YjubjpmTUicvUaGRzPItc9eHMybREIOWdSeWHiNBKV8WPtUbDiJMBIXTIXcqbI8XdNEwF3hO1tnPfBlseKJpcLhZiAnNqV_NSLYvYUOxaBIrVw"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-pure-white/90 backdrop-blur px-3 py-1 rounded text-label-caps font-label-caps text-deep-navy">AGES 2-5</span>
                     </div>
                 </div>
+                <div class="p-8">
+                    <h3 class="font-headline-md text-headline-md text-deep-navy mb-3">Starx Play School</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">A gentle, activity-driven introduction to learning. We focus on motor skills, interactive socializing, and sensory growth.</p>
+                    <a class="flex items-center gap-2 text-deep-navy font-bold hover:text-ochre-gold transition-colors" href="#">
+                        <span class="font-label-caps text-label-caps uppercase text-[10px]">View Curriculum</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
             </div>
-            <div class="trust-visual-box" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80');">
+            <!-- Vertical 2 -->
+            <div class="bg-pure-white rounded-lg overflow-hidden card-elevation group">
+                <div class="relative h-64 overflow-hidden">
+                    <img alt="Schooling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsGErRrLiUeDQIowyjuR4Fi7jAyvdqZhnr8i7AehF1kWVx0cy37pmYBeIigI2_4a88Ae9smxnlPPFSz96fvc5M79efB9nNUs373hz6hWJ7SKOesBI945m_S6c4V7o3OgLcxro5y2nUC_Zt20PfPT_HIcHmDK5MTxtIZ30GQgshhhpVZXpO35Pym19oPZXgf_DCZSBTzlUWTHkKGnHJeVpSDPrkHlCY6fXzFjCNz4aWnmI_XzUfTpnDo1A"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-pure-white/90 backdrop-blur px-3 py-1 rounded text-label-caps font-label-caps text-deep-navy">SCHOOLING</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-headline-md text-headline-md text-deep-navy mb-3">Classes 1st to 12th</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Rigorous, conceptual schooling covering fundamental subjects to advanced boards preparation and competitive foundations.</p>
+                    <a class="flex items-center gap-2 text-deep-navy font-bold hover:text-ochre-gold transition-colors" href="#">
+                        <span class="font-label-caps text-label-caps uppercase text-[10px]">View Academic Streams</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Vertical 3 -->
+            <div class="bg-pure-white rounded-lg overflow-hidden card-elevation group">
+                <div class="relative h-64 overflow-hidden">
+                    <img alt="Govt Jobs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC71ZgxIgTN7Rigv4dZLD13yX0Mnt_LdyMbJoBniqQ2j7DMJYBWfOv0S211Qs_ZKOKxBU2o1nndVAkzjo-rKvhv9WY6sdYihjWYiuUVyXxmbpn2_tsCpzGKwGA9fHhBW0v5hSREv6tLb1yX0UwsjY0_d07O9p3ZhFuuYwosYN146j_fPkikcVfibdd5HGcAKD7FTLcRaOz7l-lVqyQFdZ9embykbfNu5dTy0Zvqcq0KpYo4rKcHSz3EskZASCHhjCwaYEvWkIQ6lA"/>
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-pure-white/90 backdrop-blur px-3 py-1 rounded text-label-caps font-label-caps text-deep-navy">CAREER TARGET</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-headline-md text-headline-md text-deep-navy mb-3">Govt Job Preparation</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Specialized coaching for SSC, Banking, and State Govt jobs with regular mock tests and veteran mentoring.</p>
+                    <a class="flex items-center gap-2 text-deep-navy font-bold hover:text-ochre-gold transition-colors" href="#">
+                        <span class="font-label-caps text-label-caps uppercase text-[10px]">View Active Batches</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SYSTEM GLOBAL FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>STAR INSTITUTE</h3>
-                <p>A trusted educational group managing multi-branch infrastructures spanning early developmental play schools to competitive professional career portals.</p>
+<!-- Toppers Marquee Section -->
+<section class="py-section-padding-lg bg-pure-white overflow-hidden">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Celebrating Our Starx Toppers</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">Meet the achievers who turned their dreams into reality with Starx Institute.</p>
+        </div>
+    </div>
+    <div class="relative w-full overflow-hidden">
+        <div class="marquee-container">
+            <!-- Student Cards (First Set) -->
+            <div class="topper-card bg-surface-gray p-8 rounded-2xl card-elevation border-b-4 border-ochre-gold flex flex-col items-center text-center group">
+                <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-pure-white shadow-sm">
+                    <img alt="Rahul Sharma" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLtD6mg20wY7e_O6BO4Ct2j1uy5jAsqCFxs-dmJTNKneD4RV15vMDk_HtZpUYeYHI6XMaMQJRHuZH0FLTOf_7NHIDP72kqvb02P8Sbp0YKVQyDcL2PhR0b_ETprg6gFxuG4FHojPLf-66RXJwiewyT-MUhyLJ4hjhPbgBQlQkJOCtkVtZHX8c4YVMky9x5aiDa0h9XqgpQIEaAk09f44GcLqHLn-Zmrrz6H8nW2NGZoAMJVmI6t-2xd71Q"/>
+                </div>
+                <h4 class="font-headline-md text-headline-md text-deep-navy mb-1">Rahul Sharma</h4>
+                <div class="text-ochre-gold font-label-caps text-label-caps mb-4 tracking-widest uppercase">UPSC AIR 14</div>
+                <p class="font-body-md text-body-md text-on-surface-variant italic">"The strategic coaching and mock tests at Starx Institute were the key to my success."</p>
             </div>
-            <div class="footer-links-col">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home Dashboard</a></li>
-                    <li><a href="batches.html">Course Catalog</a></li>
-                    <li><a href="branches.html">Find a Branch</a></li>
-                    <li><a href="contact.html">Admissions Inquiry</a></li>
-                </ul>
+            <!-- More student cards... -->
+            <div class="topper-card bg-surface-gray p-8 rounded-2xl card-elevation border-b-4 border-ochre-gold flex flex-col items-center text-center group">
+                <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-pure-white shadow-sm">
+                    <img alt="Ananya Gupta" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsfe75t2lRaA6DN30-_WliWmQNfzgZ8txXwtbRZc6Q9npWTvABqSWcjQQqmB_iu4pcLTGg20QvnyI_t8jf8Z1On-CLSc1jBdtX9zNLQtLWyD9Qqdz78jLIzw4lNOkhGvyif81CAMn9fJ8xozgjrD-k72F8ET5XvaPad_a9ZZOoZeSdn0LGSkXYBWFeV3plP6gk9UlfDH5asXSqME7S1V9m91oGzeeEp-PlAL0bxSdZNTf0yujcRazbk_A"/>
+                </div>
+                <h4 class="font-headline-md text-headline-md text-deep-navy mb-1">Ananya Gupta</h4>
+                <div class="text-ochre-gold font-label-caps text-label-caps mb-4 tracking-widest uppercase">IIT-JEE TOPPER</div>
+                <p class="font-body-md text-body-md text-on-surface-variant italic">"The mentors here inspire. The conceptual clarity I gained is absolutely unmatched."</p>
             </div>
-            <div class="footer-contact-col">
-                <h4>Corporate Identity</h4>
-                <p>📍 Central Admin Hub, Delhi NCR</p>
-                <p>📞 +91 98765 00001</p>
-                <p>⏰ Mon - Sat: 09:00 AM - 06:00 PM</p>
+            <!-- Student cards duplicated for seamless scroll -->
+            <div class="topper-card bg-surface-gray p-8 rounded-2xl card-elevation border-b-4 border-ochre-gold flex flex-col items-center text-center group">
+                <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-pure-white shadow-sm">
+                    <img alt="Vikram Singh" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtY-oVfKuxmfr4ApLEzNRCyg5w6HiYCLuqvePm_DMtWEgSnUyUmlFhmiSjNIsOHM4yukTyqUBFZCZHDj5awA-RX61nLYPmlNs1G7SoqwUQsDCSyGgsr7QrJrzX6G-wGYG6OjV-M0rLXY7FPoZDFwflw8jkgvKTyRTwsXSS_MnSDVmPZaF167eeOA3AaQ4R9DnXLY5BKDElfbLpxcvjb_pKWaV7TcuItFmDK0Lbf8GRpXMIkYpE2iOntDQ"/>
+                </div>
+                <h4 class="font-headline-md text-headline-md text-deep-navy mb-1">Vikram Singh</h4>
+                <div class="text-ochre-gold font-label-caps text-label-caps mb-4 tracking-widest uppercase">SSC CGL RANK 1</div>
+                <p class="font-body-md text-body-md text-on-surface-variant italic">"The life-changing guidance here perfectly matched the latest exam patterns."</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Star Institute Group. All Rights Reserved. Setup Demo Environment.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-deep-navy pt-section-padding-lg pb-10 border-t border-pure-white/10 text-pure-white">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
+        <div class="space-y-6">
+            <div class="text-headline-sm font-headline-md text-ochre-gold">STARX INSTITUTE</div>
+            <p class="text-surface-variant opacity-80 text-body-md leading-relaxed">
+                A trusted educational group managing multi-branch infrastructures spanning early developmental play schools to competitive career portals.
+            </p>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined hover:text-ochre-gold cursor-pointer">public</span>
+                <span class="material-symbols-outlined hover:text-ochre-gold cursor-pointer">share</span>
+            </div>
         </div>
-    </footer>
-<script src="/js/main.js"></script>
+        <div class="space-y-6">
+            <h4 class="font-headline-md text-body-lg">Quick Navigation</h4>
+            <ul class="space-y-4 text-surface-variant opacity-80 text-body-md">
+                <li><a class="hover:text-ochre-gold" href="index.html">Home Dashboard</a></li>
+                <li><a class="hover:text-ochre-gold" href="batches.html">Course Catalog</a></li>
+                <li><a class="hover:text-ochre-gold" href="branches.html">Find a Branch</a></li>
+                <li><a class="hover:text-ochre-gold" href="contact.html">Admissions 2026</a></li>
+            </ul>
+        </div>
+        <div class="space-y-6">
+            <h4 class="font-headline-md text-body-lg">Corporate Hub</h4>
+            <ul class="space-y-4 text-surface-variant opacity-80 text-body-md">
+                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-ochre-gold text-sm">location_on</span> Delhi NCR</li>
+                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-ochre-gold text-sm">call</span> +91 98765 00001</li>
+            </ul>
+        </div>
+        <div class="space-y-6">
+            <h4 class="font-headline-md text-body-lg">Stay Updated</h4>
+            <div class="relative">
+                <input class="w-full bg-pure-white/5 border border-pure-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-ochre-gold" placeholder="Email Address" type="email"/>
+                <button class="absolute right-2 top-2 bottom-2 bg-ochre-gold text-deep-navy px-4 rounded-md font-bold text-xs uppercase">Join</button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-8 border-t border-pure-white/10 text-center">
+        <p class="text-surface-variant opacity-60 text-label-caps font-label-caps">© 2026 Starx Institute Group. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Floating Quick Actions (Mobile) -->
+<div class="fixed bottom-6 left-margin-mobile right-margin-mobile flex md:hidden gap-4 z-40">
+    <a class="flex-1 bg-deep-navy text-pure-white rounded-full py-4 flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-transform border border-pure-white/10" href="tel:+919876500001">
+        <span class="material-symbols-outlined">phone</span>
+        <span class="font-bold text-label-caps uppercase">Call Us</span>
+    </a>
+    <a class="flex-1 bg-ochre-gold text-deep-navy rounded-full py-4 flex items-center justify-center gap-2 shadow-2xl active:scale-95 transition-transform" href="contact.html">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span class="font-bold text-label-caps uppercase">Inquire</span>
+    </a>
+</div>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const overlay = document.getElementById('mobile-overlay');
+
+    if(menuBtn && closeBtn && overlay) {
+        menuBtn.addEventListener('click', () => {
+            overlay.classList.remove('translate-x-full');
+            overlay.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.add('translate-x-full');
+            overlay.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        });
+
+        overlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                overlay.classList.add('translate-x-full');
+                overlay.classList.remove('translate-x-0');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg');
+            header.classList.remove('shadow-sm');
+        } else {
+            header.classList.add('shadow-sm');
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
 </body>
 </html>
