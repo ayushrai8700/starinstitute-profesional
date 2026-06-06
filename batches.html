@@ -1,258 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses & Active Batches | Star Institute</title>
-    <!-- Linked to our master shared stylesheet -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-    <!-- TOP INFORMATIONAL STRIP -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <span>📍 Central Admissions Helpline: +91 98765 00001</span>
-            <span>✉️ info@starinstitute.edu.in</span>
-        </div>
-    </div>
-
-    <!-- MAIN SYSTEM NAVIGATION -->
-    <header class="main-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">STAR<span>INSTITUTE</span></a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="batches.html" class="active">Courses & Batches</a>
-                <a href="branches.html">Our Branches</a>
-                <a href="contact.html">Admissions 2026</a>
-            </nav>
-            <a href="contact.html" class="cta-btn-nav">Apply Now</a>
-        </div>
-    </header>
-
-    <!-- INNER PAGE HEADER HERO -->
-    <section class="inner-hero-section">
-        <div class="inner-hero-container">
-            <h1>Academic Programs & Active Batches</h1>
-            <p>Explore our carefully designed educational pathways engineered for foundational growth and highly successful career outcomes.</p>
-        </div>
-    </section>
-
-    <!-- PROGRAM SELECTION CONTROLLER (TAB SYSTEM) -->
-    <section class="batches-container-section">
-        <div class="container">
-            
-            <!-- Navigation Tabs -->
-            <div class="tab-controller">
-                <button class="tab-btn active" onclick="switchBatchTab(event, 'playschool')">👶 Star Play School</button>
-                <button class="tab-btn" onclick="switchBatchTab(event, 'schooling')">📚 Schooling (Class 1-12)</button>
-                <button class="tab-btn" onclick="switchBatchTab(event, 'govt')">🎖️ Government Job Batches</button>
-            </div>
-
-            <!-- TAB 1: PLAY SCHOOL SEGMENT -->
-            <div id="playschool" class="tab-content active-content">
-                <div class="batch-intro-box">
-                    <h2>Nurturing Young Minds with Scientific Play Systems</h2>
-                    <p>Our early education wings combine modern sensory materials with basic kinetic socialization frameworks to help toddlers grow comfortably and confidently.</p>
-                </div>
-                
-                <div class="course-grid">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Age: 2 - 3 Years</span>
-                            <h3>Playgroup Alpha</h3>
-                        </div>
-                        <p class="course-desc">Focuses on building language familiarity, basic identification blocks, motor control habits, and guided social interactions.</p>
-                        <div class="course-meta">
-                            <div><strong>⏱️ Duration:</strong> 3 Hours / Day</div>
-                            <div><strong>🏫 Mode:</strong> Offline Only</div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Age: 3 - 4 Years</span>
-                            <h3>Nursery Explorers</h3>
-                        </div>
-                        <p class="course-desc">Introduction to phonetic sounds, pre-writing trace techniques, creative painting metrics, and pattern tracking exercises.</p>
-                        <div class="course-meta">
-                            <div><strong>⏱️ Duration:</strong> 3.5 Hours / Day</div>
-                            <div><strong>🏫 Mode:</strong> Offline Only</div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Age: 4 - 5 Years</span>
-                            <h3>Kindergarten (KG)</h3>
-                        </div>
-                        <p class="course-desc">Advanced foundational language structural synthesis, basic math values, storytelling, and structured rhythm expressions.</p>
-                        <div class="course-meta">
-                            <div><strong>⏱️ Duration:</strong> 4 Hours / Day</div>
-                            <div><strong>🏫 Mode:</strong> Offline Only</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: SCHOOLING CLASSES 1 TO 12 -->
-            <div id="schooling" class="tab-content">
-                <div class="batch-intro-box">
-                    <h2>Rigorous Conceptual Schooling (Class 1st to 12th)</h2>
-                    <p>We systematically bridge standard syllabus guidelines with clear logic setups, offering specialized separate batches designed around individual classroom strengths.</p>
-                </div>
-
-                <div class="course-grid">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Classes 1 - 5</span>
-                            <h3>Primary Foundation Core</h3>
-                        </div>
-                        <p class="course-desc">Ensures complete clarity in essential math algorithms, English composition mechanics, and general environmental science logic grids.</p>
-                        <div class="course-meta">
-                            <div><strong>📅 Batches:</strong> Morning / Evening</div>
-                            <div><strong>📝 Tests:</strong> Bi-Weekly Eval</div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Classes 6 - 10</span>
-                            <h3>Middle & High School Boards Base</h3>
-                        </div>
-                        <p class="course-desc">Deep emphasis on core Chemistry, Physics, Advanced Mathematics algebra/geometry layouts, and computer fundamental concepts.</p>
-                        <div class="course-meta">
-                            <div><strong>📅 Batches:</strong> Regular 6 Days/wk</div>
-                            <div><strong>📝 Tests:</strong> Monthly Olympiad Test</div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">Classes 11 - 12</span>
-                            <h3>Senior Secondary Core Mastery</h3>
-                        </div>
-                        <p class="course-desc">Specialized tailored streams for Science (PCM/PCB) and Commerce. Targeted logic delivery built around final board marks optimization.</p>
-                        <div class="course-meta">
-                            <div><strong>📅 Batches:</strong> Comprehensive Target</div>
-                            <div><strong>📝 Tests:</strong> Board Mock Simulations</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 3: GOVERNMENT COMPETITIVE PREPARATION -->
-            <div id="govt" class="tab-content">
-                <div class="batch-intro-box">
-                    <h2>Target Driven Portals for Strategic Public Career Positions</h2>
-                    <p>Led by expert mentors, our competitive exam wings focus completely on speed tracking formulas, structural practice matrix maps, and actual examination environment conditioning.</p>
-                </div>
-
-                <div class="course-grid">
-                    <!-- UP POLICE SPECIFIC BATCH -->
-                    <div class="course-card featured-batch">
-                        <div class="course-header">
-                            <span class="badge-tag alert-badge">Active Admission</span>
-                            <h3>UP Police Constable / SI Target Batch</h3>
-                        </div>
-                        <p class="course-desc">Complete syllabus blueprint mapping spanning General Knowledge, Numerical Ability, Reasoning Proficiency, and intensive descriptive Hindi formats.</p>
-                        <ul class="batch-features-list">
-                            <li>✓ 300+ Hours of Intensive Studio Lectures</li>
-                            <li>✓ Daily 50-Question Practice Tracker Sheets (DPPs)</li>
-                            <li>✓ 25 Full-Length OMR/CBT Mock Exam Simulations</li>
-                            <li>✓ Dedicated Physical Fitness Parameter Counseling Sessions</li>
-                        </ul>
-                        <div class="course-meta">
-                            <div><strong>⏰ Timing:</strong> 08:00 AM - 12:00 PM (Batch A)</div>
-                            <div><strong>⏰ Timing:</strong> 02:00 PM - 06:00 PM (Batch B)</div>
-                        </div>
-                    </div>
-
-                    <!-- STAFF SELECTION COMMISSION -->
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">New Entry</span>
-                            <h3>SSC CHSL / CGL Matrix Module</h3>
-                        </div>
-                        <p class="course-desc">Comprehensive targeted shortcuts training focusing on Quantitative Aptitude speeds, Reasoning tricks, and English comprehension mastery blueprints.</p>
-                        <div class="course-meta">
-                            <div><strong>⏰ Timing:</strong> 09:00 AM - 01:00 PM</div>
-                            <div><strong>📊 Highlights:</strong> Special Weekly Doubt Camps</div>
-                        </div>
-                    </div>
-
-                    <!-- ALLIED STATE COMPETITIVE BATCH -->
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="badge-tag">State Focus</span>
-                            <h3>State Public Service Commission Base</h3>
-                        </div>
-                        <p class="course-desc">Foundational conceptual structural roadmap building for state general services, concentrating heavily on regional history, governance, and static current affairs logs.</p>
-                        <div class="course-meta">
-                            <div><strong>⏰ Timing:</strong> 03:00 PM - 07:00 PM</div>
-                            <div><strong>📊 Highlights:</strong> Answer Evaluation Focus</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CALL TO ACTION BANNER -->
-    <section class="cta-banner-section">
-        <div class="container text-center">
-            <h2>Confused About Selecting the Ideal Batch?</h2>
-            <p>Our professional academic advisors are available across all 5 branches to evaluate your current criteria and guide you toward the highest-yielding learning track completely free of charge.</p>
-            <a href="contact.html" class="btn-accent">Book a Free Guidance Slot</a>
-        </div>
-    </section>
-
-    <!-- SYSTEM GLOBAL FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>STAR INSTITUTE</h3>
-                <p>A trusted educational group managing multi-branch infrastructures spanning early developmental play schools to competitive professional career portals.</p>
-            </div>
-            <div class="footer-links-col">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home Dashboard</a></li>
-                    <li><a href="batches.html">Course Catalog</a></li>
-                    <li><a href="branches.html">Find a Branch</a></li>
-                    <li><a href="contact.html">Admissions Inquiry</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact-col">
-                <h4>Corporate Identity</h4>
-                <p>📍 Central Admin Hub, Delhi NCR</p>
-                <p>📞 +91 98765 00001</p>
-                <p>⏰ Mon - Sat: 09:00 AM - 06:00 PM</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Star Institute Group. All Rights Reserved. Setup Demo Environment.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTION CONTROLLER SCRIPT -->
-    <script>
-        function switchBatchTab(event, tabId) {
-            // Get all content panels and hide them
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active-content'));
-
-            // Get all tab buttons and remove the active state styling
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // Show target panel and assign active class to clicked button
-            document.getElementById(tabId).classList.add('active-content');
-            event.currentTarget.classList.add('active');
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Courses & Batches | STARX INSTITUTE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
+        }
+        .custom-shadow-hover:hover {
+            box-shadow: 0 12px 30px rgba(0, 33, 71, 0.1);
+        }
+        .mobile-nav-overlay {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-tertiary-fixed-variant": "#6c391d",
+                "outline-variant": "#c4c6cf",
+                "surface-bright": "#faf9fd",
+                "on-tertiary-fixed": "#341100",
+                "primary-container": "#002147",
+                "surface-container-low": "#f4f3f7",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#fed65b",
+                "secondary": "#735c00",
+                "on-background": "#1a1b1e",
+                "inverse-primary": "#aec7f6",
+                "tertiary": "#180500",
+                "deep-navy": "#002147",
+                "muted-blue": "#3B526F",
+                "on-primary-fixed": "#001b3d",
+                "surface-dim": "#dad9dd",
+                "surface-container-high": "#e9e7eb",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "background": "#faf9fd",
+                "surface-tint": "#465f88",
+                "surface-variant": "#e3e2e6",
+                "primary": "#000a1e",
+                "on-error": "#ffffff",
+                "error": "#ba1a1a",
+                "inverse-on-surface": "#f1f0f4",
+                "on-secondary-fixed-variant": "#574500",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#ffb691",
+                "on-surface": "#1a1b1e",
+                "on-secondary-container": "#745c00",
+                "tertiary-container": "#3d1500",
+                "outline": "#74777f",
+                "on-tertiary-container": "#b97958",
+                "surface-gray": "#F8F9FA",
+                "on-surface-variant": "#44474e",
+                "ochre-gold": "#D4AF37",
+                "primary-fixed-dim": "#aec7f6",
+                "on-primary-fixed-variant": "#2d476f",
+                "pure-white": "#FFFFFF",
+                "secondary-fixed-dim": "#e9c349",
+                "on-primary-container": "#708ab5",
+                "surface-container": "#efedf1",
+                "on-secondary-fixed": "#241a00",
+                "on-error-container": "#93000a",
+                "secondary-fixed": "#ffe088",
+                "primary-fixed": "#d6e3ff",
+                "surface-container-highest": "#e3e2e6",
+                "inverse-surface": "#2f3033",
+                "surface": "#faf9fd",
+                "tertiary-fixed": "#ffdbcb"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {
+                "section-padding-sm": "40px",
+                "margin-mobile": "16px",
+                "section-padding-lg": "80px",
+                "container-max": "1200px",
+                "gutter": "24px"
+              },
+              "fontFamily": {
+                "headline-md": ["Montserrat"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "display-hero": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-hero": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-lg": ["36px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+              }
+            }
+          }
         }
     </script>
-    <script src="/js/main.js"></script>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-ochre-gold selection:text-deep-navy overflow-x-hidden">
+
+<!-- Utility Bar -->
+<div class="bg-deep-navy py-2 hidden md:block">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center text-pure-white">
+<div class="flex gap-6 items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">phone</span>
+<span class="text-label-caps font-label-caps uppercase">Helpline: +91 98765 00001</span>
+</div>
+<div class="flex items-center gap-2 border-l border-white/20 pl-6">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span class="text-label-caps font-label-caps uppercase">admissions@starxinstitute.edu.in</span>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-label-caps font-label-caps opacity-80 uppercase tracking-widest">Established 1998</span>
+</div>
+</div>
+</div>
+
+<!-- Main Header -->
+<nav class="bg-pure-white sticky top-0 z-50 shadow-sm border-b border-outline-variant h-20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="text-headline-md font-headline-md font-bold text-deep-navy flex items-center gap-2">
+    <span class="material-symbols-outlined text-ochre-gold text-[32px]" style="font-variation-settings: 'FILL' 1;">school</span>
+    STARX<span class="text-ochre-gold">INSTITUTE</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="index.html">Home</a>
+<a class="text-label-caps font-label-caps text-deep-navy border-b-2 border-ochre-gold pb-1" href="batches.html">Courses & Batches</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="branches.html">Our Branches</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-ochre-gold transition-colors duration-200" href="contact.html">Admissions 2026</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 border border-deep-navy px-5 py-2.5 rounded-lg text-label-caps font-label-caps text-deep-navy hover:bg-surface-gray transition-all">
+    Get Free Counselling
+</button>
+<button class="bg-deep-navy text-pure-white px-6 py-2.5 rounded-lg text-label-caps font-label-caps hover:bg-primary-container transition-transform active:scale-95">
+    Apply Now
+</button>
+<button class="p-2 text-deep-navy md:hidden" id="mobile-menu-btn">
+    <span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Navigation Overlay (Merged Logic) -->
+<div class="fixed inset-0 z-[60] bg-deep-navy/95 transition-transform translate-x-full duration-300" id="mobile-overlay">
+    <div class="p-6 flex flex-col h-full text-pure-white">
+        <div class="flex justify-between items-center mb-10">
+            <span class="text-headline-md font-bold text-ochre-gold">STARX INSTITUTE</span>
+            <button id="close-menu-btn">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="text-headline-md font-headline-md opacity-80" href="index.html">Home</a>
+            <a class="text-headline-md font-headline-md text-ochre-gold border-b-2 border-ochre-gold pb-1 w-fit" href="batches.html">Courses & Batches</a>
+            <a class="text-headline-md font-headline-md opacity-80" href="branches.html">Our Branches</a>
+            <a class="text-headline-md font-headline-md opacity-80" href="contact.html">Admissions 2026</a>
+        </nav>
+        <div class="mt-auto flex flex-col gap-4">
+            <button class="bg-ochre-gold text-deep-navy font-bold py-4 rounded-lg text-label-caps uppercase">Apply Now</button>
+            <button class="border border-pure-white/30 font-bold py-4 rounded-lg text-label-caps uppercase">Free Counselling</button>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header class="relative bg-deep-navy py-12 md:py-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+    <div class="grid grid-cols-6 h-full w-full">
+        <div class="border-r border-pure-white"></div>
+        <div class="border-r border-pure-white"></div>
+        <div class="border-r border-pure-white"></div>
+        <div class="border-r border-pure-white"></div>
+        <div class="border-r border-pure-white"></div>
+        <div class="border-r border-pure-white"></div>
+    </div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+    <span class="text-ochre-gold font-label-caps text-label-caps tracking-[0.2em] mb-4 block">ACADEMIC YEAR 2026-27</span>
+    <h1 class="text-display-hero-mobile md:text-display-hero font-display-hero text-pure-white mb-6">Explore Our Specialized Curriculums</h1>
+    <p class="text-body-md md:text-body-lg font-body-lg text-pure-white/80 max-w-2xl mx-auto">From early childhood development to competitive excellence, find the perfect path for your educational journey at Starx Institute.</p>
+</div>
+</header>
+
+<main class="max-w-container-max mx-auto px-gutter py-section-padding-lg">
+<!-- Vertical 1: Play School -->
+<section class="mb-section-padding-lg">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[2px] w-12 bg-ochre-gold"></div>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-deep-navy">01. Play School: Little Stars</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-5">
+<div class="rounded-xl overflow-hidden aspect-[4/5] custom-shadow group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVRni_9aqhmrjDeUw0v-PWyR7umheaPRJpRKHc0G5ZCCnp1Eot31hAfYX1cGSvm-EpV4vp0cu9EoAK8M7AXGrkSg4sQ4l9hWJc66UiVWaQPc10InQm7OJdnv7pesPyi1l5f1cj_ckJKt-HO0f964dOOWgtYWPW1ecfCwKQHLdRiwW2xSmwBSUEClJZIAGHVMB6Lk0FbpSOZVfeftLCARZecpePe2kPOMIYA3ddt3Ymlm8vLg9NdM4WyDzxUl7SEgFVEAI7iBLeNg"/>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-center mt-8 lg:mt-0">
+<h3 class="text-headline-md font-headline-md text-deep-navy mb-4">Nurturing Curiosity & Foundation</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-8">Our Play School vertical focuses on holistic development through play-based learning, sensory exploration, and social-emotional growth in a protected, vibrant environment.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-surface-gray p-6 rounded-lg border-l-4 border-ochre-gold">
+<h4 class="font-bold text-deep-navy mb-2">Morning Bloom Batch</h4>
+<p class="text-sm text-on-surface-variant">09:00 AM - 12:30 PM</p>
+<p class="text-sm text-on-surface-variant">Focus: Cognitive Skills & Social Play</p>
+</div>
+<div class="bg-surface-gray p-6 rounded-lg border-l-4 border-ochre-gold">
+<h4 class="font-bold text-deep-navy mb-2">Mid-Day Wonder Batch</h4>
+<p class="text-sm text-on-surface-variant">01:00 PM - 04:30 PM</p>
+<p class="text-sm text-on-surface-variant">Focus: Motor Skills & Creative Arts</p>
+</div>
+</div>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ochre-gold">check_circle</span>
+<span class="text-body-md">1:8 Teacher-Student Ratio for Personalized Care</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ochre-gold">check_circle</span>
+<span class="text-body-md">CCTV-Enabled Smart Classrooms</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ochre-gold">check_circle</span>
+<span class="text-body-md">Safe & Hygienic Outdoor Play Area</span>
+</li>
+</ul>
+<button class="bg-ochre-gold text-deep-navy px-8 py-3 rounded-lg font-bold hover:bg-secondary-container transition-all self-start shadow-md">Explore Play School Admissions</button>
+</div>
+</div>
+</section>
+
+<!-- Vertical 2: K-12 -->
+<section class="mb-section-padding-lg py-16 bg-surface-gray rounded-3xl px-6 md:px-8">
+<div class="flex flex-col items-center text-center mb-12">
+<span class="text-ochre-gold font-label-caps text-label-caps tracking-[0.2em] mb-2">ELITE ACADEMICS</span>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-deep-navy">02. K-12: The Academic Core</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 glass-card p-8 rounded-2xl flex flex-col justify-between custom-shadow">
+<div>
+<h3 class="text-headline-md font-headline-md text-deep-navy mb-4">Classes 1st to 12th</h3>
+<p class="text-body-md text-on-surface-variant mb-6">Rigorous curriculum integrated with competitive exam prep. We bridge the gap between school board success and professional entrance readiness.</p>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant pt-6">
+<div>
+<span class="text-headline-md font-headline-md text-deep-navy block">100%</span>
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Board Result</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-deep-navy block">15+</span>
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Olympiad Medals</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-deep-navy block">1:25</span>
+<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Class Ratio</span>
+</div>
+</div>
+</div>
+<div class="bg-deep-navy p-8 rounded-2xl text-pure-white flex flex-col justify-center">
+<span class="material-symbols-outlined text-ochre-gold mb-4 text-[40px]">schedule</span>
+<h4 class="text-headline-md font-headline-md mb-6">Standard Batches</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-pure-white/20 pb-2">
+<span>Morning Session</span>
+<span class="text-ochre-gold font-bold">08 AM - 02 PM</span>
+</div>
+<div class="flex justify-between items-center border-b border-pure-white/20 pb-2">
+<span>Evening Support</span>
+<span class="text-ochre-gold font-bold">04 PM - 07 PM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Vertical 3: Govt Jobs -->
+<section class="mb-section-padding-lg">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-[2px] w-12 bg-ochre-gold"></div>
+<h2 class="text-headline-md md:text-headline-lg font-headline-lg text-deep-navy">03. Govt Job Preparation</h2>
+</div>
+<div class="flex flex-col lg:flex-row gap-gutter bg-pure-white border border-outline-variant rounded-3xl overflow-hidden custom-shadow">
+<div class="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
+<span class="inline-block bg-ochre-gold/10 text-ochre-gold font-bold px-3 py-1 rounded text-xs mb-4 uppercase">Crack Your Dream Job</span>
+<h3 class="text-headline-md md:text-headline-lg font-headline-lg text-deep-navy mb-6">UPSC, SSC, Banking & PSC</h3>
+<p class="text-body-md text-on-surface-variant mb-10 leading-relaxed">Our result-oriented approach provides comprehensive materials, daily analysis, and rigorous mock test series modeled on latest patterns.</p>
+</div>
+<div class="lg:w-1/2 bg-surface-gray p-8 lg:p-16">
+<h4 class="text-headline-md font-headline-md text-deep-navy mb-8">Active Target Batches</h4>
+<div class="space-y-4">
+<div class="bg-pure-white p-5 rounded-xl border border-outline-variant flex justify-between items-center group hover:border-ochre-gold transition-colors">
+<div>
+<h6 class="font-bold text-deep-navy">SSC CGL Tier I & II</h6>
+<p class="text-xs text-on-surface-variant">Evening: 05:00 PM - 08:30 PM</p>
+</div>
+<span class="material-symbols-outlined group-hover:text-ochre-gold">arrow_forward</span>
+</div>
+<div class="bg-pure-white p-5 rounded-xl border border-outline-variant flex justify-between items-center group hover:border-ochre-gold transition-colors">
+<div>
+<h6 class="font-bold text-deep-navy">IBPS / Bank PO</h6>
+<p class="text-xs text-on-surface-variant">Morning: 08:00 AM - 11:30 AM</p>
+</div>
+<span class="material-symbols-outlined group-hover:text-ochre-gold">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-deep-navy py-section-padding-sm text-pure-white border-t border-pure-white/10">
+    <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-gutter items-start">
+        <div>
+            <div class="text-headline-sm font-headline-md text-ochre-gold mb-6 uppercase tracking-wider">Starx Institute</div>
+            <p class="text-surface-variant opacity-70 text-body-md max-w-xs mb-8">Empowering students through quality education and innovative teaching since 1998.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <h4 class="text-label-caps font-label-caps text-pure-white mb-6 tracking-widest uppercase">Navigation</h4>
+                <ul class="space-y-4 text-sm opacity-80">
+                    <li><a class="hover:text-ochre-gold" href="index.html">Home</a></li>
+                    <li><a class="text-ochre-gold font-bold" href="batches.html">Courses</a></li>
+                    <li><a class="hover:text-ochre-gold" href="branches.html">Branches</a></li>
+                    <li><a class="hover:text-ochre-gold" href="contact.html">Admissions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col gap-6">
+            <h4 class="text-label-caps font-label-caps text-pure-white tracking-widest uppercase">Stay Updated</h4>
+            <div class="relative">
+                <input class="w-full bg-pure-white/5 border border-pure-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-ochre-gold" placeholder="Email Address" type="email"/>
+                <button class="absolute right-2 top-2 bottom-2 bg-ochre-gold text-deep-navy px-4 rounded-md font-bold text-xs uppercase">Join</button>
+            </div>
+            <div class="text-surface-variant opacity-50 text-xs">© 2026 Starx Institute Group. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const overlay = document.getElementById('mobile-overlay');
+
+    if(menuBtn && closeBtn && overlay) {
+        menuBtn.addEventListener('click', () => {
+            overlay.classList.remove('translate-x-full');
+            overlay.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.add('translate-x-full');
+            overlay.classList.remove('translate-x-0');
+            document.body.style.overflow = '';
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+</script>
 </body>
 </html>
